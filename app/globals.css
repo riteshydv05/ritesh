@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #131615;
+    --bg-charcoal: #242926;
+    --border-editorial: #333935;
+    --text-primary: #f4efe4;
+    --text-cream: #ebe4d4;
+    --text-muted: #969990;
+    --accent-orange: #f14d05;
+    --accent-gray: #797c75;
+  }
+
+  * {
+    border-color: var(--border-editorial);
+  }
+
+  html {
+    color-scheme: dark;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: -0.012em;
+    min-height: 100vh;
+  }
+
+  /* Editorial typography tracking adjustments */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+
+  p {
+    letter-spacing: -0.01em;
+    line-height: 1.65;
+  }
+
+  /* Monospaced code blocks */
+  code, kbd, samp, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+}
+
+@layer utilities {
+  /* 4-Stripe Heath Color Bar Utility (Black / Slate Gray / Book Cream / Cadmium Orange) */
+  .stripe-bar-heath {
+    background: linear-gradient(
+      to right,
+      #131615 0%,
+      #131615 25%,
+      #797c75 25%,
+      #797c75 50%,
+      #ebe4d4 50%,
+      #ebe4d4 75%,
+      #f14d05 75%,
+      #f14d05 100%
+    );
+  }
+
+  /* Cream-tinted panel highlight */
+  .bg-cream-surface {
+    background-color: rgba(235, 228, 212, 0.05);
+    border: 1px solid rgba(235, 228, 212, 0.15);
+  }
+
+  /* Charcoal Grey panel base */
+  .bg-charcoal-panel {
+    background-color: #242926;
+    border: 1px solid #333935;
+  }
+
+  /* 1px layout grid borders */
+  .border-layout {
+    border-width: 1px;
+    border-color: #333935;
+  }
+
+  .border-layout-t {
+    border-top-width: 1px;
+    border-color: #333935;
+  }
+
+  .border-layout-b {
+    border-bottom-width: 1px;
+    border-color: #333935;
+  }
+
+  .border-layout-l {
+    border-left-width: 1px;
+    border-color: #333935;
+  }
+
+  .border-layout-r {
+    border-right-width: 1px;
+    border-color: #333935;
+  }
+
+  /* Monospaced editorial code block utility */
+  .code-block-editorial {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    background-color: #242926;
+    border: 1px solid #333935;
+    padding: 0.75rem 1rem;
+    color: #ebe4d4;
+  }
+
+  /* Halftone patterns with warm book-jacket tint */
+  .bg-halftone {
+    background-image: radial-gradient(
+      rgba(235, 228, 212, 0.12) 1px,
+      transparent 1px
+    );
+    background-size: 16px 16px;
+  }
+
+  .bg-halftone-dense {
+    background-image: radial-gradient(
+      rgba(235, 228, 212, 0.18) 1px,
+      transparent 1px
+    );
+    background-size: 8px 8px;
+  }
+
+  .bg-halftone-orange {
+    background-image: radial-gradient(
+      rgba(241, 77, 5, 0.22) 1.25px,
+      transparent 1.25px
+    );
+    background-size: 12px 12px;
+  }
+
+  /* Editorial uppercase tracking */
+  .tracking-editorial {
+    letter-spacing: 0.18em;
+  }
+}
