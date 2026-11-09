@@ -49,10 +49,10 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-between border-b border-neutral-700 bg-editorial-charcoal-dark"
+      className="relative min-h-[calc(100vh-4.25rem)] flex flex-col justify-between border-b border-neutral-800 bg-[#131615]"
     >
-      {/* Main Editorial Hero Body with Generous Cream & Charcoal Atmosphere */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full my-auto py-16 md:py-24 lg:py-28">
+      {/* Main Editorial Hero Body */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full my-auto py-12 md:py-20 lg:py-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -63,9 +63,9 @@ export function Hero() {
           <div className="lg:col-span-7 flex flex-col justify-center space-y-6 sm:space-y-8">
             {/* Monospaced Category Tag in Rich Charcoal with Cream & Orange Accent */}
             <motion.div variants={itemVariants}>
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-editorial-charcoal border border-editorial-cream/30 text-editorial-cream font-mono text-[10px] sm:text-xs tracking-wider uppercase rounded-full shadow-sm">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-editorial-charcoal border border-neutral-700 text-editorial-cream font-mono text-[10px] sm:text-xs tracking-wider uppercase rounded-full shadow-sm">
                 <span className="inline-block h-2 w-2 bg-editorial-orange rounded-full shadow-[0_0_8px_rgba(241,77,5,0.7)]" />
-                <span className="font-bold text-editorial-cream-light">
+                <span className="font-semibold text-editorial-cream-light">
                   SOFTWARE ENGINEERING • ARTIFICIAL INTELLIGENCE • FULL-STACK
                 </span>
               </div>
@@ -82,14 +82,12 @@ export function Hero() {
               </h1>
             </motion.div>
 
-            {/* Sub-paragraph in Warm Cream on a Charcoal Slate Card */}
+            {/* Sub-paragraph Explaining Background with Warm Editorial Typography */}
             <motion.div variants={itemVariants}>
-              <div className="bg-editorial-charcoal/90 p-5 sm:p-6 rounded-sm border-l-4 border-editorial-cream shadow-md">
-                <p className="text-base sm:text-lg text-editorial-cream-light leading-relaxed font-normal">
-                  {personalInfo.description} Specialized in high-throughput computer vision
-                  pipelines, document intelligence architectures, and resilient full-stack web platforms.
-                </p>
-              </div>
+              <p className="max-w-2xl text-base sm:text-lg text-editorial-cream/90 leading-relaxed font-normal bg-editorial-charcoal/40 p-4 rounded-sm border-l-2 border-editorial-cream">
+                {personalInfo.description} Specialized in high-throughput computer vision
+                pipelines, document intelligence architectures, and resilient full-stack web platforms.
+              </p>
             </motion.div>
 
             {/* Action Buttons */}
@@ -112,9 +110,9 @@ export function Hero() {
                 href={personalInfo.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-xs sm:text-sm font-mono uppercase tracking-wider font-bold text-editorial-charcoal-dark bg-editorial-cream hover:bg-editorial-cream-light transition-all rounded-full border border-editorial-cream-light shadow-[0_4px_16px_rgba(235,228,212,0.25)] active:scale-95"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-xs sm:text-sm font-mono uppercase tracking-wider font-bold text-editorial-black bg-editorial-cream hover:bg-editorial-cream-light transition-all rounded-full border border-editorial-cream-light shadow-[0_4px_16px_rgba(235,228,212,0.15)] active:scale-95"
               >
-                <FileText className="w-4 h-4 text-editorial-charcoal-dark" />
+                <FileText className="w-4 h-4 text-editorial-charcoal" />
                 <span>Download Resume</span>
               </a>
             </motion.div>
@@ -122,14 +120,14 @@ export function Hero() {
             {/* Editorial Technical Meta Footnote with 4-Stripe Color Stamp */}
             <motion.div
               variants={itemVariants}
-              className="pt-6 border-t border-neutral-700/80 flex flex-wrap items-center gap-y-2 gap-x-6 text-[11px] font-mono text-editorial-cream"
+              className="pt-6 border-t border-neutral-800 flex flex-wrap items-center gap-y-2 gap-x-6 text-[11px] font-mono text-editorial-cream/80"
             >
-              <div className="flex items-center gap-2 bg-editorial-charcoal px-3 py-1 rounded-full border border-neutral-700">
+              <div className="flex items-center gap-2">
                 <span className="h-2 w-8 stripe-bar-heath inline-block rounded-xs shadow-xs" />
-                <span className="font-bold text-editorial-cream-light">NEW DELHI, INDIA</span>
+                <span className="font-semibold text-editorial-cream">NEW DELHI, INDIA</span>
               </div>
-              <div className="text-editorial-cream/90 font-medium">SPECIALTY: AI / SYSTEMS ARCHITECTURE</div>
-              <div className="text-editorial-orange font-bold flex items-center gap-1.5 bg-editorial-charcoal px-3 py-1 rounded-full border border-neutral-700">
+              <div className="text-neutral-400">SPECIALTY: AI / SYSTEMS ARCHITECTURE</div>
+              <div className="text-editorial-orange font-bold flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-editorial-orange rounded-full animate-ping" />
                 <span>AVAILABILITY: OPEN FOR ROLES</span>
               </div>
@@ -151,17 +149,17 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Bottom Charcoal Bar with Cream & Orange Accents */}
-      <div className="w-full border-t border-neutral-700 py-3.5 px-4 sm:px-6 lg:px-8 bg-editorial-charcoal">
-        <div className="mx-auto max-w-7xl flex items-center justify-between text-[11px] font-mono text-editorial-cream">
+      {/* Bottom Subtle Grid Line with 4-Stripe Accent & Charcoal Bar */}
+      <div className="w-full border-t border-neutral-800 py-3 px-4 sm:px-6 lg:px-8 bg-editorial-charcoal/80">
+        <div className="mx-auto max-w-7xl flex items-center justify-between text-[11px] font-mono text-editorial-cream/80">
           <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 bg-editorial-orange rounded-full shadow-[0_0_6px_#f14d05]" />
-            <span className="font-bold text-editorial-cream-light">
+            <span className="font-semibold text-editorial-cream-light">
               PIPELINES: FASTAPI • NEXT.JS 15 • PYTORCH • POSTGIS
             </span>
           </div>
-          <span className="hidden sm:inline text-editorial-cream/80 font-medium">
-            EDITORIAL PALETTE: CHARCOAL GREY • VINTAGE CREAM • CADMIUM ORANGE
+          <span className="hidden sm:inline text-editorial-cream/60">
+            EDITORIAL COLOR SYSTEM: BLACK • CHARCOAL • SLATE • CREAM • CADMIUM ORANGE
           </span>
         </div>
       </div>

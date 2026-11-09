@@ -13,33 +13,33 @@ const config: Config = {
         foreground: "var(--text-primary)",
         editorial: {
           black: "#131615",
-          charcoal: "#262b28",        // Rich Charcoal Grey
-          "charcoal-dark": "#1d221f", // Base background (replaces harsh pitch black)
-          "charcoal-card": "#2e3531", // Elevated Charcoal for cards & panels
-          "charcoal-light": "#3b443e",
-          gray: "#797c75",            // Ash / Slate gray
-          "gray-light": "#969990",
-          cream: "#ebe4d4",           // Vintage Book Cream
-          "cream-light": "#f6f2e8",   // Crisp Bright Cream for headers/highlights
-          "cream-soft": "#ded6c3",    // Cream secondary
-          "cream-surface": "#f0ebd9",
-          orange: "#f14d05",          // Cadmium Penguin Orange
+          charcoal: "#272d29",      // Mid Charcoal Grey
+          "charcoal-bg": "#1c211e", // Base Charcoal background replacing deep black
+          "charcoal-dark": "#1f2421",
+          "charcoal-light": "#363d38",
+          gray: "#797c75",
+          "gray-light": "#a1a49c",
+          cream: "#ebe4d4",         // Prominent Vintage Book Cream
+          "cream-light": "#f6f2e9", // Bright Crisp Cream
+          "cream-surface": "rgba(235, 228, 212, 0.12)",
+          "cream-muted": "#cfc8b6",
+          orange: "#f14d05",
           "orange-hover": "#d94202",
-          "orange-light": "#ff6a2b",
+          "orange-muted": "rgba(241, 77, 5, 0.15)",
         },
         neutral: {
-          950: "#1d221f", // Now rich charcoal dark
-          900: "#262b28", // Mid charcoal
-          850: "#2e3531", // Elevated charcoal
-          800: "#3d4641", // Charcoal border
-          700: "#525c56",
-          600: "#69746c",
+          950: "#1c211e",           // Charcoal background
+          900: "#222824",           // Deep Charcoal
+          850: "#272d29",           // Card Charcoal
+          800: "#363d38",           // Border Charcoal
+          700: "#49524c",           // Muted borders
+          600: "#606b64",
           500: "#797c75",
-          400: "#969990",
-          300: "#c2beb2",
-          200: "#ded6c3", // Soft cream
-          100: "#ebe4d4", // Main cream
-          50: "#f6f2e8",  // Light cream
+          400: "#a1a49c",
+          300: "#cfc8b6",           // Warm Cream Tint
+          200: "#ded8c8",           // Cream
+          100: "#ebe4d4",           // Bright Book Cream
+          50: "#f6f2e9",            // Highlight Cream
         },
       },
     },
