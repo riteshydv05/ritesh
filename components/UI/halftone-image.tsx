@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 interface HalftoneImageProps {
@@ -9,14 +9,17 @@ interface HalftoneImageProps {
   spec?: string;
 }
 
-const PORTRAIT_SRC =
+const REMOTE_URL =
   "https://res.cloudinary.com/s2tcil9t/image/upload/v1794239964/Monochrome_Halftone_Portrait_with_Geometric_Accents.png";
+const LOCAL_FALLBACK = "/portrait.png";
 
 export function HalftoneImage({
   className = "",
   caption = "HEATH_EDITION // PORTRAIT_01",
   spec = "RES: 2400x3200 // MONO_64K",
 }: HalftoneImageProps) {
+  const [imgSrc, setImgSrc] = useState(LOCAL_FALLBACK);
+
   return (
     <div className={`relative flex flex-col items-center justify-center ${className}`}>
       {/* 4-Stripe Accent Ribbon Header Badge */}
@@ -84,42 +87,35 @@ export function HalftoneImage({
           +
         </div>
 
-        {/* Cutout Portrait Silhouette Container with Cloudinary Image */}
-        <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#131615] border border-neutral-800 flex items-center justify-center rounded-xs group">
-          {/* Base SVG Halftone Dot Matrix Pattern */}
-          <div className="absolute inset-0 bg-halftone opacity-30 pointer-events-none z-10" />
-
+        {/* Portrait Silhouette Container */}
+        <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden bg-[#131615] border border-neutral-800 flex items-center justify-center rounded-xs group">
           {/* Technical Alignment Coordinates Overlay */}
           <div className="absolute inset-0 flex flex-col justify-between p-3.5 pointer-events-none select-none z-20">
-            <div className="flex justify-between items-start text-[10px] font-mono uppercase tracking-widest bg-editorial-charcoal/80 px-2 py-0.5 rounded-xs border border-neutral-800/80 w-fit">
+            <div className="flex justify-between items-start text-[10px] font-mono uppercase tracking-widest bg-editorial-charcoal/90 px-2 py-0.5 rounded-xs border border-neutral-700/80 w-fit">
               <span className="text-editorial-orange font-semibold">FIG. 01 [INDEX]</span>
             </div>
-            <div className="flex justify-between items-end text-[10px] font-mono uppercase tracking-widest bg-editorial-charcoal/80 px-2 py-0.5 rounded-xs border border-neutral-800/80 w-fit self-end">
+            <div className="flex justify-between items-end text-[10px] font-mono uppercase tracking-widest bg-editorial-charcoal/90 px-2 py-0.5 rounded-xs border border-neutral-700/80 w-fit self-end">
               <span className="text-editorial-cream font-mono">LAT: 28.6139° N</span>
             </div>
           </div>
 
-          {/* Cloudinary Portrait Image with Smooth Hover Scale */}
-          <div className="relative w-full h-full">
+          {/* Portrait Image (uses local public asset with Cloudinary fallback) */}
+          <div className="relative w-full h-full min-h-[360px] sm:min-h-[420px]">
             <Image
-              src={PORTRAIT_SRC}
+              src={imgSrc}
               alt="Monochrome Halftone Portrait with Geometric Accents"
               fill
               priority
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+              unoptimized
+              onError={() => {
+                if (imgSrc !== REMOTE_URL) {
+                  setImgSrc(REMOTE_URL);
+                }
+              }}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
               className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
             />
           </div>
-
-          {/* Warm Vintage Tone Tint Overlay */}
-          <div
-            className="absolute inset-0 pointer-events-none mix-blend-overlay z-15"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 50% 50%, rgba(235,228,212,0.12) 1.5px, transparent 1.5px)",
-              backgroundSize: "6px 6px",
-            }}
-          />
         </div>
 
         {/* Technical Footer Metadata Annotation */}
