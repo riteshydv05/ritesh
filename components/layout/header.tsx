@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { personalInfo } from "@/data/portfolio-data";
-import { FileText, Menu, X, ArrowUpRight } from "lucide-react";
+import { FileText, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 const CATEGORY_PILLS = [
@@ -60,28 +60,28 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-neutral-800 bg-[#131615]/95 backdrop-blur-md">
-      {/* Editorial Decorative 4-Stripe Top Bar */}
+    <header className="sticky top-0 z-40 w-full border-b border-neutral-700 bg-editorial-charcoal-dark/95 backdrop-blur-md shadow-md">
+      {/* Editorial Decorative 4-Stripe Top Accent Line */}
       <div className="h-[3px] w-full stripe-bar-heath" aria-hidden="true" />
 
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 gap-4">
         {/* Left Section: Brand Pill + Filter/Category Pills */}
         <div className="flex items-center gap-3">
-          {/* Brand Pill: [ Name ] in Charcoal & Cream */}
+          {/* Brand Pill: [ Name ] in Rich Charcoal & Cream */}
           <Link
             href="/"
-            className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-neutral-700 bg-editorial-charcoal text-editorial-cream font-mono text-xs uppercase tracking-wider hover:border-editorial-orange hover:text-white transition-all shadow-sm"
+            className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-neutral-700 bg-editorial-charcoal text-editorial-cream font-mono text-xs uppercase tracking-wider hover:border-editorial-orange hover:bg-editorial-charcoal-card transition-all shadow-sm"
             aria-label="Home"
           >
             <span className="text-editorial-orange font-bold text-sm">[</span>
-            <span className="font-semibold text-editorial-cream-light group-hover:text-white">
+            <span className="font-bold text-editorial-cream-light group-hover:text-white">
               {personalInfo.name}
             </span>
             <span className="text-editorial-orange font-bold text-sm">]</span>
           </Link>
 
           {/* Editorial Category / Filter Pills */}
-          <div className="hidden lg:flex items-center gap-1.5 pl-3 border-l border-neutral-800">
+          <div className="hidden lg:flex items-center gap-1.5 pl-3 border-l border-neutral-700">
             {CATEGORY_PILLS.map((pill) => {
               const isActive = activeCategory === pill.label;
               return (
@@ -94,8 +94,8 @@ export function Header() {
                   }}
                   className={`px-3 py-1 rounded-full text-xs font-mono tracking-tight transition-all border ${
                     isActive
-                      ? "bg-editorial-orange text-white font-semibold border-editorial-orange shadow-[0_0_12px_rgba(241,77,5,0.35)]"
-                      : "bg-editorial-charcoal text-editorial-cream-muted border-neutral-700/80 hover:border-editorial-orange hover:text-white"
+                      ? "bg-editorial-orange text-white font-bold border-editorial-orange shadow-[0_0_12px_rgba(241,77,5,0.35)]"
+                      : "bg-editorial-charcoal text-editorial-cream border-neutral-700 hover:border-editorial-cream hover:bg-editorial-charcoal-card"
                   }`}
                 >
                   {pill.label}
@@ -113,7 +113,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-editorial-cream/80 hover:text-editorial-orange transition-colors font-medium tracking-tight text-xs uppercase font-mono py-1 border-b border-transparent hover:border-editorial-orange"
+                className="text-editorial-cream hover:text-editorial-orange transition-colors font-semibold tracking-tight text-xs uppercase font-mono py-1 border-b border-transparent hover:border-editorial-orange"
               >
                 {link.label}
               </a>
@@ -125,9 +125,9 @@ export function Header() {
             href={personalInfo.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-editorial-black bg-editorial-cream hover:bg-editorial-orange hover:text-white transition-all rounded-full border border-editorial-cream-light shadow-[0_2px_10px_rgba(235,228,212,0.15)] active:scale-95"
+            className="group inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono font-bold uppercase tracking-wider text-editorial-charcoal-dark bg-editorial-cream hover:bg-editorial-orange hover:text-white transition-all rounded-full border border-editorial-cream-light shadow-[0_2px_10px_rgba(235,228,212,0.2)] active:scale-95"
           >
-            <FileText className="w-3.5 h-3.5 text-editorial-charcoal group-hover:text-white transition-colors" aria-hidden="true" />
+            <FileText className="w-3.5 h-3.5 text-editorial-charcoal-dark group-hover:text-white transition-colors" aria-hidden="true" />
             <span>Download Resume</span>
           </a>
         </div>
@@ -138,7 +138,7 @@ export function Header() {
             href={personalInfo.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider text-editorial-black bg-editorial-cream hover:bg-editorial-orange hover:text-white rounded-full transition-colors"
+            className="px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider text-editorial-charcoal-dark bg-editorial-cream hover:bg-editorial-orange hover:text-white rounded-full transition-colors shadow-sm"
           >
             CV
           </a>
@@ -168,10 +168,10 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="md:hidden border-b border-neutral-800 bg-editorial-charcoal/95 backdrop-blur px-6 py-6"
+            className="md:hidden border-b border-neutral-700 bg-editorial-charcoal px-6 py-6"
           >
             {/* Mobile Category Pills */}
-            <div className="flex flex-wrap gap-2 pb-4 mb-4 border-b border-neutral-800">
+            <div className="flex flex-wrap gap-2 pb-4 mb-4 border-b border-neutral-700">
               {CATEGORY_PILLS.map((pill) => (
                 <a
                   key={pill.label}
@@ -182,8 +182,8 @@ export function Header() {
                   }}
                   className={`px-3 py-1 rounded-full text-xs font-mono border ${
                     activeCategory === pill.label
-                      ? "bg-editorial-orange text-white border-editorial-orange font-semibold"
-                      : "bg-[#131615] text-editorial-cream border-neutral-700"
+                      ? "bg-editorial-orange text-white border-editorial-orange font-bold"
+                      : "bg-editorial-charcoal-dark text-editorial-cream border-neutral-600"
                   }`}
                 >
                   {pill.label}
@@ -197,7 +197,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-base font-medium text-editorial-cream hover:text-editorial-orange transition-colors py-1.5 flex items-center justify-between border-b border-neutral-800/60"
+                  className="text-base font-semibold text-editorial-cream hover:text-editorial-orange transition-colors py-1.5 flex items-center justify-between border-b border-neutral-700/60"
                 >
                   <span>{link.label}</span>
                   <span className="text-editorial-orange text-xs">→</span>
@@ -209,7 +209,7 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-3 text-xs font-mono uppercase tracking-widest text-editorial-black bg-editorial-cream hover:bg-editorial-orange hover:text-white transition-colors rounded-full font-bold shadow-md"
+                  className="flex items-center justify-center gap-2 w-full py-3 text-xs font-mono uppercase tracking-widest text-editorial-charcoal-dark bg-editorial-cream hover:bg-editorial-orange hover:text-white transition-colors rounded-full font-bold shadow-md"
                 >
                   <FileText className="w-4 h-4" />
                   <span>Download Resume (PDF)</span>

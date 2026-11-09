@@ -83,43 +83,43 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative border-b border-neutral-800 py-20 sm:py-24 md:py-32 bg-[#131615]"
+      className="relative border-b border-neutral-700 py-20 sm:py-24 md:py-32 bg-editorial-charcoal-dark"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="border-b border-neutral-800 pb-8 mb-12 sm:mb-16">
+        <div className="border-b border-neutral-700 pb-8 mb-12 sm:mb-16">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <div className="font-mono text-xs uppercase tracking-widest text-editorial-cream/70 mb-2 flex items-center gap-2">
+              <div className="font-mono text-xs uppercase tracking-widest text-editorial-cream mb-2 flex items-center gap-2">
                 <span className="w-2.5 h-2.5 bg-editorial-orange rounded-full shadow-[0_0_8px_#f14d05]" />
-                <span className="font-bold text-editorial-cream">Section // 03</span>
+                <span className="font-bold text-editorial-cream-light">Section // 03</span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-editorial-cream-light">
                 ENGINEERING PHILOSOPHY & ABOUT
               </h2>
             </div>
-            <p className="max-w-md text-xs sm:text-sm font-mono text-editorial-cream/80 bg-editorial-charcoal/50 p-3 rounded-sm border border-neutral-800">
+            <p className="max-w-md text-xs sm:text-sm font-mono text-editorial-cream bg-editorial-charcoal p-3.5 rounded-sm border border-neutral-700 shadow-sm">
               Foundational principles guiding system architecture, pragmatic intelligence, and craftsmanship.
             </p>
           </div>
         </div>
 
-        {/* Editorial 3-Pillar Grid in Charcoal with Cream Accents */}
+        {/* Editorial 3-Pillar Grid in Rich Charcoal with Cream Accents */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16">
           {PILLARS.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={pillar.title}
-                className="group border border-neutral-800 bg-editorial-charcoal/70 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-editorial-orange hover:bg-editorial-charcoal/95 rounded-sm shadow-md"
+                className="group border border-neutral-700 bg-editorial-charcoal p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-editorial-orange hover:bg-editorial-charcoal-card rounded-sm shadow-md"
               >
                 <div>
                   {/* Pillar Number & Icon */}
-                  <div className="flex items-center justify-between pb-4 border-b border-neutral-700/80 mb-6">
+                  <div className="flex items-center justify-between pb-4 border-b border-neutral-700 mb-6">
                     <span className="font-mono text-sm font-extrabold text-editorial-orange">
                       PILLAR // {pillar.number}
                     </span>
-                    <div className="p-2 bg-[#131615] border border-neutral-700 text-editorial-orange rounded-sm group-hover:border-editorial-orange/60 transition-colors shadow-sm">
+                    <div className="p-2 bg-editorial-charcoal-dark border border-neutral-600 text-editorial-orange rounded-sm group-hover:border-editorial-orange/60 transition-colors shadow-sm">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
@@ -128,22 +128,24 @@ export function AboutSection() {
                   <h3 className="text-xl font-bold tracking-tight text-editorial-cream-light mb-2 group-hover:text-white transition-colors">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs font-mono text-editorial-cream/80 mb-4 leading-relaxed font-semibold">
+                  <p className="text-xs font-mono text-editorial-cream mb-4 leading-relaxed font-bold">
                     {pillar.tagline}
                   </p>
 
-                  {/* Description */}
-                  <p className="text-sm text-editorial-cream/90 leading-relaxed mb-6 bg-[#131615]/50 p-3.5 rounded-sm border border-neutral-800/80">
-                    {pillar.description}
-                  </p>
+                  {/* Description in High-Contrast Cream on Charcoal Box */}
+                  <div className="bg-editorial-charcoal-dark p-4 rounded-sm border border-neutral-700 mb-6 shadow-inner">
+                    <p className="text-sm text-editorial-cream-light leading-relaxed font-normal">
+                      {pillar.description}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Key Highlights with Orange Checks */}
-                <div className="pt-4 border-t border-neutral-700/70 space-y-2.5">
+                <div className="pt-4 border-t border-neutral-700 space-y-2.5">
                   {pillar.keyPoints.map((point, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-2.5 text-xs font-mono text-editorial-cream/90"
+                      className="flex items-start gap-2.5 text-xs font-mono text-editorial-cream font-medium"
                     >
                       <Check className="w-4 h-4 text-editorial-orange shrink-0 mt-0.5" />
                       <span>{point}</span>
@@ -155,8 +157,8 @@ export function AboutSection() {
           })}
         </div>
 
-        {/* Engineering Commitments Matrix */}
-        <div className="border border-neutral-800 bg-editorial-charcoal/80 p-6 sm:p-8 md:p-10 rounded-sm relative overflow-hidden shadow-lg">
+        {/* Engineering Commitments Matrix in Cream Surface & Charcoal */}
+        <div className="border border-neutral-700 bg-editorial-charcoal p-6 sm:p-8 md:p-10 rounded-sm relative overflow-hidden shadow-xl">
           {/* Top 4-Stripe Line */}
           <div className="absolute top-0 left-0 right-0 h-1.5 stripe-bar-heath" />
 
@@ -171,7 +173,7 @@ export function AboutSection() {
             {ENGINEERING_COMMITMENTS.map((commitment, index) => (
               <div
                 key={commitment.title}
-                className="border-l-2 border-editorial-orange pl-4 sm:pl-6 space-y-2 bg-[#131615]/40 py-2 pr-3 rounded-r-sm"
+                className="border-l-3 border-editorial-orange pl-4 sm:pl-6 space-y-2 bg-editorial-charcoal-dark p-4 rounded-r-sm shadow-sm"
               >
                 <div className="font-mono text-xs text-editorial-orange font-bold">
                   // 0{index + 1}
@@ -179,7 +181,7 @@ export function AboutSection() {
                 <h4 className="text-base font-bold text-editorial-cream-light">
                   {commitment.title}
                 </h4>
-                <p className="text-xs sm:text-sm text-editorial-cream/80 leading-relaxed">
+                <p className="text-xs sm:text-sm text-editorial-cream leading-relaxed font-medium">
                   {commitment.description}
                 </p>
               </div>
@@ -187,10 +189,10 @@ export function AboutSection() {
           </div>
 
           {/* Bottom Technical Seal */}
-          <div className="mt-8 pt-6 border-t border-neutral-700 flex flex-wrap items-center justify-between text-[11px] font-mono text-editorial-cream/80 gap-2">
+          <div className="mt-8 pt-6 border-t border-neutral-700 flex flex-wrap items-center justify-between text-[11px] font-mono text-editorial-cream gap-2">
             <span className="flex items-center gap-1.5">
               <Terminal className="w-3.5 h-3.5 text-editorial-orange" />
-              <span className="font-semibold text-editorial-cream">
+              <span className="font-bold text-editorial-cream-light">
                 DISCIPLINE: APPLIED AI & FULL-STACK SYSTEMS ARCHITECTURE
               </span>
             </span>

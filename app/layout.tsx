@@ -3,7 +3,7 @@ import "./globals.css";
 import { personalInfo } from "@/data/portfolio-data";
 
 export const viewport: Viewport = {
-  themeColor: "#131615",
+  themeColor: "#1d221f",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -80,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className="min-h-screen bg-[#131615] text-[#ebe4d4] font-sans antialiased selection:bg-editorial-orange selection:text-white">
+      <body className="min-h-screen bg-editorial-charcoal-dark text-editorial-cream font-sans antialiased selection:bg-editorial-orange selection:text-white">
         {children}
       </body>
     </html>

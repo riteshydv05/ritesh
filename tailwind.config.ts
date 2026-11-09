@@ -12,34 +12,34 @@ const config: Config = {
         background: "var(--bg-primary)",
         foreground: "var(--text-primary)",
         editorial: {
-          black: "#131615",      // Deep vintage carbon
-          charcoal: "#242926",   // Rich Charcoal Grey (Stripe 1-2 bridge)
-          "charcoal-dark": "#1a1f1c",
-          "charcoal-light": "#333935",
-          gray: "#797c75",       // Ash / Slate gray (Stripe 2)
+          black: "#131615",
+          charcoal: "#262b28",        // Rich Charcoal Grey
+          "charcoal-dark": "#1d221f", // Base background (replaces harsh pitch black)
+          "charcoal-card": "#2e3531", // Elevated Charcoal for cards & panels
+          "charcoal-light": "#3b443e",
+          gray: "#797c75",            // Ash / Slate gray
           "gray-light": "#969990",
-          cream: "#ebe4d4",      // Vintage Book Cream (Stripe 3)
-          "cream-light": "#f4efe4",
-          "cream-muted": "#dcd4c0",
-          "cream-surface": "rgba(235, 228, 212, 0.08)",
-          orange: "#f14d05",     // Cadmium Penguin Orange (Stripe 4)
+          cream: "#ebe4d4",           // Vintage Book Cream
+          "cream-light": "#f6f2e8",   // Crisp Bright Cream for headers/highlights
+          "cream-soft": "#ded6c3",    // Cream secondary
+          "cream-surface": "#f0ebd9",
+          orange: "#f14d05",          // Cadmium Penguin Orange
           "orange-hover": "#d94202",
           "orange-light": "#ff6a2b",
-          "orange-muted": "rgba(241, 77, 5, 0.15)",
         },
         neutral: {
-          950: "#131615",
-          900: "#1a1f1c",
-          850: "#242926",
-          800: "#333935",
-          700: "#484f4a",
-          600: "#5e6660",
+          950: "#1d221f", // Now rich charcoal dark
+          900: "#262b28", // Mid charcoal
+          850: "#2e3531", // Elevated charcoal
+          800: "#3d4641", // Charcoal border
+          700: "#525c56",
+          600: "#69746c",
           500: "#797c75",
           400: "#969990",
           300: "#c2beb2",
-          200: "#dcd4c0",
-          100: "#ebe4d4",
-          50: "#f4efe4",
+          200: "#ded6c3", // Soft cream
+          100: "#ebe4d4", // Main cream
+          50: "#f6f2e8",  // Light cream
         },
       },
     },

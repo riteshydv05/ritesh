@@ -4,12 +4,13 @@
 
 @layer base {
   :root {
-    --bg-primary: #131615;
-    --bg-charcoal: #242926;
-    --border-editorial: #333935;
-    --text-primary: #f4efe4;
-    --text-cream: #ebe4d4;
-    --text-muted: #969990;
+    --bg-primary: #1d221f;       /* Warm Charcoal Grey base (replaces pure pitch black) */
+    --bg-charcoal: #262b28;      /* Mid Charcoal */
+    --bg-charcoal-card: #2e3531; /* Card Charcoal surface */
+    --border-editorial: #3d4641; /* Charcoal border */
+    --text-primary: #f6f2e8;     /* Bright Book Cream */
+    --text-cream: #ebe4d4;       /* Cream typography */
+    --text-muted: #ded6c3;       /* Soft Cream secondary */
     --accent-orange: #f14d05;
     --accent-gray: #797c75;
   }
@@ -40,11 +41,13 @@
   h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.035em;
     font-weight: 600;
+    color: #f6f2e8;
   }
 
   p {
     letter-spacing: -0.01em;
     line-height: 1.65;
+    color: #ebe4d4;
   }
 
   /* Monospaced code blocks */
@@ -69,42 +72,52 @@
     );
   }
 
-  /* Cream-tinted panel highlight */
+  /* Cream-tinted surface panels */
+  .bg-cream-panel {
+    background-color: #ebe4d4;
+    color: #1d221f;
+  }
+
   .bg-cream-surface {
-    background-color: rgba(235, 228, 212, 0.05);
-    border: 1px solid rgba(235, 228, 212, 0.15);
+    background-color: rgba(235, 228, 212, 0.12);
+    border: 1px solid rgba(235, 228, 212, 0.3);
   }
 
   /* Charcoal Grey panel base */
   .bg-charcoal-panel {
-    background-color: #242926;
-    border: 1px solid #333935;
+    background-color: #262b28;
+    border: 1px solid #3d4641;
+  }
+
+  .bg-charcoal-card {
+    background-color: #2e3531;
+    border: 1px solid #48534d;
   }
 
   /* 1px layout grid borders */
   .border-layout {
     border-width: 1px;
-    border-color: #333935;
+    border-color: #3d4641;
   }
 
   .border-layout-t {
     border-top-width: 1px;
-    border-color: #333935;
+    border-color: #3d4641;
   }
 
   .border-layout-b {
     border-bottom-width: 1px;
-    border-color: #333935;
+    border-color: #3d4641;
   }
 
   .border-layout-l {
     border-left-width: 1px;
-    border-color: #333935;
+    border-color: #3d4641;
   }
 
   .border-layout-r {
     border-right-width: 1px;
-    border-color: #333935;
+    border-color: #3d4641;
   }
 
   /* Monospaced editorial code block utility */
@@ -112,25 +125,25 @@
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 0.75rem;
     line-height: 1.5;
-    background-color: #242926;
-    border: 1px solid #333935;
+    background-color: #262b28;
+    border: 1px solid #3d4641;
     padding: 0.75rem 1rem;
     color: #ebe4d4;
   }
 
-  /* Halftone patterns with warm book-jacket tint */
+  /* Halftone patterns with warm book-jacket cream tint */
   .bg-halftone {
     background-image: radial-gradient(
-      rgba(235, 228, 212, 0.12) 1px,
-      transparent 1px
+      rgba(235, 228, 212, 0.22) 1.25px,
+      transparent 1.25px
     );
     background-size: 16px 16px;
   }
 
   .bg-halftone-dense {
     background-image: radial-gradient(
-      rgba(235, 228, 212, 0.18) 1px,
-      transparent 1px
+      rgba(235, 228, 212, 0.28) 1.25px,
+      transparent 1.25px
     );
     background-size: 8px 8px;
   }

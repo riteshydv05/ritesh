@@ -102,28 +102,28 @@ export function SkillsSection() {
   return (
     <section
       id="expertise"
-      className="relative border-b border-neutral-800 py-20 sm:py-24 md:py-32 bg-[#131615]"
+      className="relative border-b border-neutral-700 py-20 sm:py-24 md:py-32 bg-editorial-charcoal-dark"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="border-b border-neutral-800 pb-8 mb-12 sm:mb-16">
+        <div className="border-b border-neutral-700 pb-8 mb-12 sm:mb-16">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <div className="font-mono text-xs uppercase tracking-widest text-editorial-cream/70 mb-2 flex items-center gap-2">
+              <div className="font-mono text-xs uppercase tracking-widest text-editorial-cream mb-2 flex items-center gap-2">
                 <span className="w-2.5 h-2.5 bg-editorial-orange rounded-full shadow-[0_0_8px_#f14d05]" />
-                <span className="font-bold text-editorial-cream">Section // 02</span>
+                <span className="font-bold text-editorial-cream-light">Section // 02</span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-editorial-cream-light">
                 TECHNICAL EXPERTISE
               </h2>
             </div>
-            <p className="max-w-md text-xs sm:text-sm font-mono text-editorial-cream/80 bg-editorial-charcoal/50 p-3 rounded-sm border border-neutral-800">
+            <p className="max-w-md text-xs sm:text-sm font-mono text-editorial-cream bg-editorial-charcoal p-3.5 rounded-sm border border-neutral-700 shadow-sm">
               Categorized tools, frameworks, and system building blocks. Zero arbitrary percentage bars.
             </p>
           </div>
         </div>
 
-        {/* 6-Card Grid in Charcoal & Cream */}
+        {/* 6-Card Grid in Rich Charcoal & Cream */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {SKILL_CATEGORIES.map((category, index) => {
             const Icon = category.icon;
@@ -132,20 +132,20 @@ export function SkillsSection() {
             return (
               <div
                 key={category.title}
-                className="group border border-neutral-800 bg-editorial-charcoal/70 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-editorial-orange hover:bg-editorial-charcoal/95 rounded-sm shadow-md"
+                className="group border border-neutral-700 bg-editorial-charcoal p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-editorial-orange hover:bg-editorial-charcoal-card rounded-sm shadow-md"
               >
                 <div>
                   {/* Category Header */}
-                  <div className="flex items-center justify-between pb-4 border-b border-neutral-700/80 mb-5">
+                  <div className="flex items-center justify-between pb-4 border-b border-neutral-700 mb-5">
                     <div className="flex items-center gap-2.5">
-                      <div className="p-2 bg-[#131615] border border-neutral-700 text-editorial-orange rounded-sm group-hover:border-editorial-orange/60 transition-colors shadow-sm">
+                      <div className="p-2 bg-editorial-charcoal-dark border border-neutral-600 text-editorial-orange rounded-sm group-hover:border-editorial-orange/60 transition-colors shadow-sm">
                         <Icon className="w-4 h-4" />
                       </div>
-                      <span className="font-mono text-xs text-editorial-cream font-bold">
+                      <span className="font-mono text-xs text-editorial-cream-light font-bold">
                         {formattedIndex} // {category.categoryTag}
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-editorial-orange font-bold uppercase bg-editorial-orange/15 px-2 py-0.5 rounded-full border border-editorial-orange/30">
+                    <span className="text-[10px] font-mono text-editorial-orange font-bold uppercase bg-editorial-orange/15 px-2.5 py-1 rounded-full border border-editorial-orange/40">
                       {category.skills.length} MODULES
                     </span>
                   </div>
@@ -154,7 +154,7 @@ export function SkillsSection() {
                   <h3 className="text-lg font-bold tracking-tight text-editorial-cream-light mb-2 group-hover:text-white transition-colors">
                     {category.title}
                   </h3>
-                  <p className="text-xs text-editorial-cream/70 font-mono mb-6 leading-relaxed">
+                  <p className="text-xs text-editorial-cream font-mono mb-6 leading-relaxed font-medium">
                     {category.description}
                   </p>
 
@@ -163,15 +163,15 @@ export function SkillsSection() {
                     {category.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="border border-neutral-700/70 bg-[#131615]/80 p-3 hover:border-editorial-orange/50 transition-colors rounded-sm"
+                        className="border border-neutral-700/80 bg-editorial-charcoal-dark p-3.5 hover:border-editorial-cream transition-colors rounded-sm shadow-xs"
                       >
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="text-xs font-bold text-editorial-cream font-mono tracking-tight">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-xs font-bold text-editorial-cream-light font-mono tracking-tight">
                             {skill.name}
                           </span>
                           <span className="w-1.5 h-1.5 bg-editorial-orange rounded-full shadow-[0_0_4px_#f14d05]" />
                         </div>
-                        <p className="text-[11px] text-editorial-cream/80 leading-snug">
+                        <p className="text-[11px] text-editorial-cream leading-snug font-medium">
                           {skill.context}
                         </p>
                       </div>
@@ -180,8 +180,8 @@ export function SkillsSection() {
                 </div>
 
                 {/* Technical Footnote */}
-                <div className="mt-6 pt-4 border-t border-neutral-700/70 flex items-center justify-between text-[10px] font-mono text-editorial-cream/70">
-                  <span className="flex items-center gap-1.5 font-semibold text-editorial-cream">
+                <div className="mt-6 pt-4 border-t border-neutral-700 flex items-center justify-between text-[10px] font-mono text-editorial-cream">
+                  <span className="flex items-center gap-1.5 font-bold text-editorial-cream-light">
                     <Terminal className="w-3.5 h-3.5 text-editorial-orange" />
                     <span>SYS_STACK</span>
                   </span>
