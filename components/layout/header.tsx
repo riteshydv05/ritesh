@@ -3,25 +3,26 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { personalInfo } from "@/data/portfolio-data";
-import { FileText, Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 const CATEGORY_PILLS = [
-  { label: "Engineering", href: "#expertise" },
-  { label: "AI & ML", href: "#projects" },
-  { label: "Systems", href: "#projects" },
+  { label: "Projects", href: "#projects" },
+  { label: "Achievements", href: "#achievements" },
+  { label: "Skills", href: "#expertise" },
 ];
 
 const NAV_LINKS = [
   { href: "#projects", label: "Projects" },
-  { href: "#expertise", label: "Expertise" },
-  { href: "#about", label: "About" },
+  { href: "#achievements", label: "Achievements" },
+  { href: "#expertise", label: "Skills" },
+  { href: "#about", label: "About & Education" },
   { href: "#contact", label: "Contact" },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<string>("Engineering");
+  const [activeCategory, setActiveCategory] = useState<string>("Projects");
 
   // Close mobile menu on Escape key
   useEffect(() => {
@@ -67,7 +68,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 gap-4">
         {/* Left Section: Brand Pill + Filter/Category Pills */}
         <div className="flex items-center gap-3">
-          {/* Brand Pill: [ Name ] in Charcoal & Cream */}
+          {/* Brand Pill: [ Ritesh Yadav ] */}
           <Link
             href="/"
             className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-neutral-700 bg-editorial-charcoal text-editorial-cream font-mono text-xs uppercase tracking-wider hover:border-editorial-orange hover:text-white transition-all shadow-sm"
@@ -105,7 +106,7 @@ export function Header() {
           </div>
         </div>
 
-        {/* Right Section: Anchor Nav + Download Resume Button */}
+        {/* Right Section: Anchor Nav */}
         <div className="hidden md:flex items-center gap-6 text-sm">
           <nav className="flex items-center gap-6" aria-label="Main Navigation">
             {NAV_LINKS.map((link) => (
@@ -120,27 +121,25 @@ export function Header() {
             ))}
           </nav>
 
-          {/* High-Contrast Cream & Cadmium Orange "Download Resume" Action Button */}
+          {/* Connect Action Trigger */}
           <a
-            href={personalInfo.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-editorial-black bg-editorial-cream hover:bg-editorial-orange hover:text-white transition-all rounded-full border border-editorial-cream-light shadow-[0_2px_10px_rgba(235,228,212,0.15)] active:scale-95"
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
+            className="group inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-editorial-black bg-editorial-cream hover:bg-editorial-orange hover:text-white transition-all rounded-full border border-editorial-cream-light shadow-[0_2px_10px_rgba(235,228,212,0.15)] active:scale-95"
           >
-            <FileText className="w-3.5 h-3.5 text-editorial-charcoal group-hover:text-white transition-colors" aria-hidden="true" />
-            <span>Download Resume</span>
+            <span>Let&apos;s Connect</span>
+            <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
 
-        {/* Mobile Hamburger & Quick Resume Trigger */}
+        {/* Mobile Hamburger Button */}
         <div className="flex md:hidden items-center gap-2">
           <a
-            href={personalInfo.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
             className="px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider text-editorial-black bg-editorial-cream hover:bg-editorial-orange hover:text-white rounded-full transition-colors"
           >
-            CV
+            Contact
           </a>
           <button
             type="button"
@@ -203,18 +202,6 @@ export function Header() {
                   <span className="text-editorial-orange text-xs">→</span>
                 </a>
               ))}
-              <div className="pt-4">
-                <a
-                  href={personalInfo.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-3 text-xs font-mono uppercase tracking-widest text-editorial-black bg-editorial-cream hover:bg-editorial-orange hover:text-white transition-colors rounded-full font-bold shadow-md"
-                >
-                  <FileText className="w-4 h-4" />
-                  <span>Download Resume (PDF)</span>
-                </a>
-              </div>
             </nav>
           </motion.div>
         )}

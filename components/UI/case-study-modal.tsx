@@ -97,7 +97,7 @@ export function CaseStudyModal({ project, isOpen, onClose }: CaseStudyModalProps
             {/* Top 4-Stripe Color Bar */}
             <div className="h-[3px] w-full stripe-bar-heath" aria-hidden="true" />
 
-            {/* Header: Title, Tagline, Stack Badges & GitHub Button */}
+            {/* Header: Title, Tagline, Stack Badges & Live/GitHub Buttons */}
             <div className="sticky top-0 z-20 flex items-center justify-between border-b border-neutral-800 bg-[#131615]/95 backdrop-blur px-6 py-4">
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-editorial-orange rounded-full" />
@@ -106,6 +106,17 @@ export function CaseStudyModal({ project, isOpen, onClose }: CaseStudyModalProps
                 </span>
               </div>
               <div className="flex items-center gap-2">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white bg-editorial-orange hover:bg-editorial-orange-hover transition-colors rounded-sm font-semibold shadow"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>Live Demo</span>
+                  </a>
+                )}
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
@@ -115,17 +126,6 @@ export function CaseStudyModal({ project, isOpen, onClose }: CaseStudyModalProps
                   >
                     <Github className="w-3.5 h-3.5 text-editorial-orange" />
                     <span className="hidden sm:inline">Repository</span>
-                  </a>
-                )}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white bg-editorial-orange hover:bg-editorial-orange-hover transition-colors rounded-sm font-semibold shadow"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span className="hidden sm:inline">Live Demo</span>
                   </a>
                 )}
                 <button

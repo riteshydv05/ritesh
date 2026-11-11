@@ -24,6 +24,7 @@ export interface Project {
   keyFeatures: string[];
   technicalChallenges: string[];
   personalContribution: string;
+  achievementBadge?: string;
   metricsOrResults?: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -39,13 +40,43 @@ export interface TechCategory {
   skills: SkillItem[];
 }
 
+export interface Achievement {
+  id: string;
+  title: string;
+  organization: string;
+  year?: string;
+  badge: string;
+  description: string;
+}
+
+export interface LeadershipRole {
+  role: string;
+  organization: string;
+  websiteUrl: string;
+  description: string;
+  keyContributions: string[];
+}
+
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  duration: string;
+  score: string;
+}
+
 export interface PersonalInfo {
   name: string;
   roleTitle: string;
   headline: string;
   description: string;
   email: string;
+  phone: string;
   github: string;
+  githubUsername: string;
   linkedin: string;
-  resumeUrl: string;
+  linkedinUsername: string;
+  university: string;
+  degree: string;
+  duration: string;
+  cgpa: string;
 }

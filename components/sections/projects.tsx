@@ -38,8 +38,7 @@ export function ProjectsSection() {
               </h2>
             </div>
             <p className="max-w-md text-xs sm:text-sm font-mono text-editorial-cream/80 bg-editorial-charcoal/50 p-3 rounded-sm border border-neutral-800">
-              In-depth production architectures spanning computer vision, document
-              intelligence, and precision machine learning pipelines.
+              Production web applications, collegiate platforms, document intelligence systems, and interactive learning tools.
             </p>
           </div>
         </div>

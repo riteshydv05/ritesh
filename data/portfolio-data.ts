@@ -1,18 +1,252 @@
-import { PersonalInfo, Project, TechCategory } from "@/types";
+import {
+  PersonalInfo,
+  Project,
+  TechCategory,
+  Achievement,
+  LeadershipRole,
+  EducationItem,
+} from "@/types";
 
 export const personalInfo: PersonalInfo = {
-  name: "Aditya Sharma",
-  roleTitle: "Software Engineer | AI & Full-Stack Developer",
-  headline: "Building intelligent software. Solving real-world problems.",
+  name: "Ritesh Yadav",
+  roleTitle: "Full Stack Developer | Computer Science Undergraduate",
+  headline: "Building digital experiences. Engineering meaningful solutions.",
   description:
-    "I'm a software developer interested in AI, machine learning, and full-stack engineering. I enjoy turning complex problems into practical technology solutions.",
-  email: "aditya.sharma.dev@gmail.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  resumeUrl: "/resume.pdf",
+    "I'm Ritesh Yadav, a Computer Science undergraduate and Full Stack Developer interested in building practical web applications, exploring technology, and solving real-world problems through engineering.",
+  email: "riteshyvns2005@gmail.com",
+  phone: "+91-81153-03806",
+  github: "https://github.com/riteshydv05",
+  githubUsername: "riteshydv05",
+  linkedin: "https://linkedin.com/in/riteshydv05",
+  linkedinUsername: "riteshydv05",
+  university: "Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur",
+  degree: "B.Tech in Computer Science and Engineering",
+  duration: "2024–2028",
+  cgpa: "8.14/10",
+};
+
+export const aboutNarrative = {
+  paragraph1:
+    "I'm a Computer Science and Engineering undergraduate at Madan Mohan Malaviya University of Technology, with a strong interest in full-stack development and software engineering.",
+  paragraph2:
+    "I enjoy building web applications, working with modern technologies, and translating ideas into practical digital solutions.",
+  paragraph3:
+    "My technical journey includes developing full-stack applications, participating in competitive technology events, and building community-focused digital portals.",
+  paragraph4:
+    "I believe in continuous learning, building meaningful projects, and improving my engineering skills through practical experience.",
 };
 
 export const projects: Project[] = [
+  {
+    id: "cognito-learning-hub",
+    title: "COGNITO LEARNING HUB",
+    subtitle: "Full-Stack MERN-Based Real-Time Quiz Platform",
+    tagline:
+      "A full-stack MERN-based quiz platform featuring user authentication, real-time quiz flow, and result tracking.",
+    achievementBadge: "Winner — IIT Bombay Techfest 2025",
+    coverImage: "/projects/cognito.webp",
+    tags: ["MongoDB", "Express.js", "React", "Node.js"],
+    liveUrl: "https://www.cognito-learning-hub.live/",
+    problemStatement:
+      "Traditional online quiz and learning evaluation interfaces often lack smooth real-time question flows, secure session persistence, and instant performance feedback across diverse learner groups.",
+    solution:
+      "Engineered an interactive, responsive MERN-stack evaluation portal featuring robust user authentication, dynamic quiz state management, real-time timer handling, and automated scoring breakdown.",
+    systemArchitecture: {
+      summary:
+        "Modular MERN architecture separating client-side stateful quiz components from RESTful API routes, JWT authentication middleware, and persistent MongoDB schema collections.",
+      nodes: [
+        {
+          step: 1,
+          title: "User Authentication & Authorization",
+          description:
+            "Secure session access and user profile identification using token-based authentication.",
+          technologies: ["Node.js", "Express.js"],
+        },
+        {
+          step: 2,
+          title: "Quiz Flow & Question Engine",
+          description:
+            "Dynamic question delivery, stateful response tracking, and timed assessment state.",
+          technologies: ["React", "Express.js"],
+        },
+        {
+          step: 3,
+          title: "Evaluation & Scoring Service",
+          description:
+            "Automated answer verification, grade aggregation, and result summary calculations.",
+          technologies: ["Node.js", "MongoDB"],
+        },
+        {
+          step: 4,
+          title: "Result Analytics & Student Dashboard",
+          description:
+            "Responsive interface for reviewing score histories, completion times, and answer keys.",
+          technologies: ["React", "Tailwind CSS"],
+        },
+      ],
+    },
+    implementationDetails: [
+      "Built responsive client interface with React managing active quiz state and question navigation.",
+      "Implemented Express.js RESTful API endpoints for user authentication, quiz creation, and submission handling.",
+      "Structured MongoDB collections to index quizzes, user progress, and historical performance metrics.",
+      "Ensured seamless real-time timer transitions and automated submission upon time expiry.",
+      "Deployed and verified live in production at cognito-learning-hub.live.",
+    ],
+    keyFeatures: [
+      "Secure user authentication and profile management.",
+      "Real-time interactive quiz flow with timed evaluations.",
+      "Automated scoring and comprehensive performance feedback.",
+      "Responsive design optimized across mobile and desktop devices.",
+      "Live production deployment with fast global response times.",
+    ],
+    technicalChallenges: [
+      "Maintaining state consistency during timed quiz transitions across client and server.",
+      "Structuring modular database schemas for flexible question types and user evaluation histories.",
+    ],
+    personalContribution:
+      "Led the full-stack architecture and implementation of Cognito Learning Hub using the MERN stack, resulting in the winning project recognition at IIT Bombay Techfest 2025.",
+    metricsOrResults: [
+      "Recognized as Winner at IIT Bombay Techfest 2025.",
+      "Live deployment serving interactive assessments reliably in production.",
+    ],
+    githubUrl: "https://github.com/riteshydv05",
+  },
+  {
+    id: "haazir-attendance",
+    title: "HAAZIR — SMART ATTENDANCE SYSTEM",
+    subtitle: "Web-Based Academic Attendance Management System",
+    tagline:
+      "A web-based attendance management system featuring a responsive interface designed for academic use cases.",
+    coverImage: "/projects/haazir.webp",
+    tags: ["React", "Node.js", "Express.js", "Tailwind CSS", "MongoDB"],
+    liveUrl: "https://www.haazir.me/",
+    problemStatement:
+      "Manual and paper-based attendance workflows in academic institutions are time-consuming, prone to record inaccuracies, and lack central visibility for faculty and administrative oversight.",
+    solution:
+      "Designed a responsive, intuitive web application tailored for educational environments, allowing educators to streamline student attendance logging, track aggregate attendance percentages, and generate clean record summaries.",
+    systemArchitecture: {
+      summary:
+        "Client-server web portal with role-based attendance workflows, responsive student grid rosters, and structured attendance record logging.",
+      nodes: [
+        {
+          step: 1,
+          title: "Faculty & Course Management",
+          description:
+            "Faculty dashboard for defining courses, academic terms, and student rosters.",
+          technologies: ["React", "Node.js"],
+        },
+        {
+          step: 2,
+          title: "Attendance Logging Interface",
+          description:
+            "Fast, accessible student checklist allowing quick multi-student status updates.",
+          technologies: ["React", "Tailwind CSS"],
+        },
+        {
+          step: 3,
+          title: "Data Persistence & Session Records",
+          description:
+            "Timestamped attendance transactions recorded per lecture and student ID.",
+          technologies: ["Express.js", "MongoDB"],
+        },
+        {
+          step: 4,
+          title: "Attendance Reports & Summaries",
+          description:
+            "Automated summary calculations highlighting aggregate attendance percentages and trends.",
+          technologies: ["Node.js", "React"],
+        },
+      ],
+    },
+    implementationDetails: [
+      "Constructed clean responsive layouts using React and Tailwind CSS for mobile and desktop classroom use.",
+      "Designed structured database records to log attendance dates, student identifiers, and status flags.",
+      "Built summary statistics routines calculating cumulative attendance percentages per student and subject.",
+      "Ensured lightweight bundle footprint and swift user input response during in-class attendance marking.",
+      "Deployed and verified live in production at haazir.me.",
+    ],
+    keyFeatures: [
+      "Fast, intuitive one-click attendance marking interface for educators.",
+      "Comprehensive roster and course tracking views.",
+      "Automated calculation of student attendance percentages and thresholds.",
+      "Responsive layout designed specifically for tablet and mobile browser access in classrooms.",
+      "Live deployment accessible on custom domain.",
+    ],
+    technicalChallenges: [
+      "Optimizing touch interactions and grid views for quick classroom logging on mobile devices.",
+      "Structuring queries to efficiently aggregate attendance histories across academic terms.",
+    ],
+    personalContribution:
+      "Designed and developed the full web application, crafting the responsive UI and backend attendance logging logic for academic institutions.",
+    githubUrl: "https://github.com/riteshydv05",
+  },
+  {
+    id: "the-editorial-board",
+    title: "THE EDITORIAL BOARD WEBSITE",
+    subtitle: "Official University Editorial Board Digital Publication Platform",
+    tagline:
+      "Official website and digital publishing portal for The Editorial Board, MMMUT, showcasing university newsletters, campus media, and creative literary publications.",
+    coverImage: "/projects/editorial.webp",
+    tags: ["React", "Next.js", "Tailwind CSS", "JavaScript", "Web Design"],
+    liveUrl: "https://www.theeditorialboard.in/",
+    problemStatement:
+      "A premier university media organization required a modern, centralized digital publication presence to showcase annual magazines, campus newsletters, literary archives, and event coverage to thousands of students and alumni.",
+    solution:
+      "Designed, developed, and maintain the official web portal of The Editorial Board, MMMUT. Features an editorial layout, digital newsletter archive, committee rosters, and dynamic article highlights optimized across mobile and desktop screens.",
+    systemArchitecture: {
+      summary:
+        "Modern responsive content architecture delivering structured campus media, digital publications, archival reading sections, and event galleries.",
+      nodes: [
+        {
+          step: 1,
+          title: "Editorial Design System",
+          description:
+            "High-contrast editorial typography, mobile-responsive grid, and accessible component hierarchy.",
+          technologies: ["React", "Tailwind CSS"],
+        },
+        {
+          step: 2,
+          title: "Publication & Newsletter Archive",
+          description:
+            "Digital cataloging of campus editions, newsletters, literary magazines, and event coverage.",
+          technologies: ["Next.js", "JavaScript"],
+        },
+        {
+          step: 3,
+          title: "Editorial Team & Board Roster",
+          description:
+            "Dedicated profiles and committee showcases for university board leadership and student contributors.",
+          technologies: ["React"],
+        },
+        {
+          step: 4,
+          title: "Production Deployment & CDN Delivery",
+          description:
+            "Optimized global asset delivery on custom domain with high performance scores across device formats.",
+          technologies: ["Vercel", "DNS / Cloud"],
+        },
+      ],
+    },
+    implementationDetails: [
+      "Designed the complete visual identity and responsive web architecture for the official board portal.",
+      "Engineered digital publication archives allowing students and alumni to access historical editions.",
+      "Continuously maintain and update site content, editorial announcements, and recruitment portals.",
+      "Maintained 100% uptime and sub-second load times on the official university domain theeditorialboard.in.",
+    ],
+    keyFeatures: [
+      "Official digital publication presence for The Editorial Board, MMMUT.",
+      "Online reading archive for student magazines and campus newsletters.",
+      "Responsive editorial layout with fluid reading typography.",
+      "Live in active production at theeditorialboard.in.",
+    ],
+    technicalChallenges: [
+      "Balancing high-resolution visual imagery with fast mobile load speeds.",
+      "Designing an intuitive archival navigation system for multi-year publication dossiers.",
+    ],
+    personalContribution:
+      "Executive Member of The Editorial Board, MMMUT. Solely responsible for designing, developing, and actively maintaining the official website.",
+    githubUrl: "https://github.com/riteshydv05",
+  },
   {
     id: "bhumilekh",
     title: "BHUMILEKH",
@@ -109,241 +343,178 @@ export const projects: Project[] = [
     metricsOrResults: [
       "Sub-second geospatial overlap detection queries across cadastral plot databases via PostGIS GIST indexing.",
       "Significant reduction in manual transcription duration through automated field-level confidence scoring.",
-      "Zero-downtime asynchronous pipeline processing thousands of multi-page land records concurrently.",
+      "Zero-downtime asynchronous pipeline processing multi-page land records concurrently.",
     ],
-    githubUrl: "https://github.com/example/bhumilekh",
-    liveUrl: "https://bhumilekh.example.com",
+    githubUrl: "https://github.com/riteshydv05",
   },
   {
-    id: "google-drive-face-clustering",
-    title: "GOOGLE DRIVE FACE CLUSTERING",
-    subtitle: "AI-Powered Face-Based Image Clustering System",
+    id: "machine-guru",
+    title: "MACHINE GURU",
+    subtitle: "Interactive Machine Learning & Algorithm Exploration Platform",
     tagline:
-      "Autonomous facial recognition and clustering engine organizing cloud image repositories without manual metadata labeling.",
-    coverImage: "/projects/drive-face-clustering.webp",
-    tags: [
-      "Python",
-      "RetinaFace",
-      "ArcFace",
-      "Computer Vision",
-      "Face Embeddings",
-      "Clustering Algorithms",
-      "Google Drive API",
-    ],
+      "An educational and practical platform designed to help developers and students explore machine learning concepts, model behaviors, and algorithmic implementations through interactive demos.",
+    coverImage: "/projects/machineguru.webp",
+    tags: ["Python", "React", "Machine Learning", "FastAPI", "Tailwind CSS"],
     problemStatement:
-      "Large-scale personal and organizational photo repositories stored on cloud drives lack semantic facial metadata, forcing users to rely on manual organization or unindexed directory browsing across thousands of unlabeled files.",
+      "Understanding machine learning algorithms often requires bridging abstract mathematical equations with concrete code behavior. Learners struggle to visualize decision boundaries, loss convergence, and parameter sensitivity without interactive experimentation.",
     solution:
-      "Engineered an automated face detection, embedding extraction, and unsupervised clustering pipeline that connects directly to Google Drive, detects all faces across synced photo libraries, and clusters images by individual identities.",
+      "Built Machine Guru as an interactive educational hub where users can visualize algorithmic pipelines, explore classical ML models (regression, classification, clustering), and inspect step-by-step mathematical intuitions in real time.",
     systemArchitecture: {
       summary:
-        "Multi-stage computer vision workflow integrating cloud ingestion, high-precision detection, metric deep feature representation, and density-based clustering.",
+        "Interactive client-server architecture pairing visual exploratory frontends with Python-powered machine learning inference and visualization engines.",
       nodes: [
         {
           step: 1,
-          title: "Drive API Image Ingestion Pipeline",
+          title: "Interactive Visualization Frontend",
           description:
-            "Batched, rate-limit-aware synchronization pulling high-resolution image assets via Google Drive REST API with incremental cursor checkpoints.",
-          technologies: ["Google Drive API", "Python"],
+            "Canvas and SVG-driven parameter controls allowing users to adjust hyperparameters and data distributions.",
+          technologies: ["React", "Tailwind CSS"],
         },
         {
           step: 2,
-          title: "RetinaFace Detection & 5-Point Landmark Alignment",
+          title: "Model Execution & Inference Engine",
           description:
-            "Robust multi-stage face detection identifying facial boundaries and 5-point facial landmarks under severe poses, occlusions, and variable lighting.",
-          technologies: ["RetinaFace", "OpenCV"],
+            "FastAPI backend executing machine learning model computations and decision boundaries.",
+          technologies: ["FastAPI", "Python"],
         },
         {
           step: 3,
-          title: "ArcFace 512-d Feature Vector Extraction",
+          title: "Algorithmic Walkthroughs & Docs",
           description:
-            "Deep metric representation using an Additive Angular Margin loss (ArcFace) backbone to generate normalized 512-dimensional identity vectors.",
-          technologies: ["ArcFace", "PyTorch"],
-        },
-        {
-          step: 4,
-          title: "DBSCAN / Agglomerative Clustering",
-          description:
-            "Unsupervised clustering combining cosine distance metrics with density-based (DBSCAN) and hierarchical agglomerative clustering to discover unique identity groups.",
-          technologies: ["Scikit-Learn", "NumPy"],
-        },
-        {
-          step: 5,
-          title: "Multi-Person Assignment & Cloud Organization",
-          description:
-            "Graph-based image multi-assignment associating group photos with multiple discovered identities and updating Drive metadata tags.",
-          technologies: ["Python", "Google Drive API"],
+            "Modular breakdowns of algorithmic mathematics, loss functions, and evaluation metrics.",
+          technologies: ["Python", "React"],
         },
       ],
     },
     implementationDetails: [
-      "Implemented a token-bucket rate limiter and exponential backoff strategy to handle Google Drive API quota constraints during batch image ingestion.",
-      "Employed affine transformation matrices based on 5-point facial landmarks to normalize facial alignment prior to feature representation.",
-      "Extracted discriminative 512-dimensional facial embeddings using a pre-trained ResNet-based ArcFace model.",
-      "Optimized distance matrix computations using vectorized cosine similarity routines to support clustering across tens of thousands of faces.",
-      "Devised a multi-label assignment protocol enabling group photographs containing multiple subjects to be correctly indexed under all matching identity clusters.",
+      "Developed interactive parameter sliders and visual plot renderers in React.",
+      "Implemented modular Python endpoints calculating model training loops and decision boundaries dynamically.",
+      "Structured comprehensive guides detailing mathematical foundations and real-world engineering trade-offs.",
     ],
     keyFeatures: [
-      "Zero-setup cloud sync directly interfacing with Google Drive image collections.",
-      "High-recall face localization across extreme lighting, motion blur, and arbitrary orientation angles via RetinaFace.",
-      "Discriminative identity separation powered by 512-dimensional ArcFace metric embeddings.",
-      "Adaptive unsupervised clustering that automatically determines the number of distinct persons without prior supervision.",
-      "Multi-subject association allowing group photographs to populate multiple person collections simultaneously.",
+      "Interactive model parameter tuning and instant visual feedback.",
+      "Decision boundary visualizations for classification and clustering algorithms.",
+      "Modular architectural layout suitable for self-paced student learning.",
     ],
     technicalChallenges: [
-      "Preventing cluster contamination from noisy background detections or false positive non-face textures.",
-      "Tuning distance cutoffs in cosine metric space to avoid over-clustering identical subjects across significant age or haircut shifts.",
-      "Managing strict Google Drive API per-user queries-per-second quotas during initial bulk ingestion passes.",
+      "Rendering real-time decision boundary surfaces efficiently without blocking UI thread.",
+      "Translating complex mathematical concepts into clean, accessible visual representations.",
     ],
     personalContribution:
-      "Formulated and implemented the entire computer vision architecture, from OAuth2-authenticated Google Drive streaming to the dual-stage face detection and embedding pipeline, followed by custom distance-metric clustering evaluation.",
-    metricsOrResults: [
-      "High facial recognition discrimination across varied angles and lighting using 512-dimensional ArcFace feature vectors.",
-      "Effective noise rejection using DBSCAN outlier filtering to isolate blurry or partially occluded candidate faces.",
-    ],
-    githubUrl: "https://github.com/example/drive-face-clustering",
-  },
-  {
-    id: "amazon-ml-challenge",
-    title: "AMAZON ML CHALLENGE",
-    subtitle: "Machine Learning Competition Project",
-    tagline:
-      "Competitive machine learning pipeline leveraging multimodal feature engineering, gradient boosting, and neural architectures optimized for F0.5 evaluation.",
-    coverImage: "/projects/amazon-ml.webp",
-    tags: [
-      "Python",
-      "Pandas",
-      "Scikit-Learn",
-      "XGBoost",
-      "PyTorch",
-      "Feature Engineering",
-      "F0.5 Score",
-    ],
-    problemStatement:
-      "Predicting structured product dimensions and categorical entity attributes from heterogeneous, noisy catalog text and product metadata, where precision is weighted more heavily than recall under competition evaluation constraints.",
-    solution:
-      "Built an iterative machine learning pipeline featuring domain-specific regex and text token extraction, robust imputation strategies, cross-validated gradient-boosted decision trees, and PyTorch deep neural ensembles optimized for the competition's F0.5 score.",
-    systemArchitecture: {
-      summary:
-        "Iterative tabular and text feature processing pipeline terminating in a stratified cross-validated ensemble tuned for precision-weighted classification.",
-      nodes: [
-        {
-          step: 1,
-          title: "Exploratory Data Analysis & Entity Profiling",
-          description:
-            "Systematic audit of missing values, inconsistent measurement units, long-tail class distributions, and label inconsistencies across training partitions.",
-          technologies: ["Pandas", "NumPy"],
-        },
-        {
-          step: 2,
-          title: "Preprocessing & Normalization Pipeline",
-          description:
-            "Automated unit parsing (metric/imperial conversion), text sanitization, outlier clipping, and scikit-learn ColumnTransformer integrations.",
-          technologies: ["Scikit-Learn", "Regex"],
-        },
-        {
-          step: 3,
-          title: "Feature Engineering & Extraction",
-          description:
-            "Extraction of TF-IDF n-grams, dimensional ratio indicators, word-level embeddings, and target-encoded categorical features.",
-          technologies: ["Scikit-Learn", "PyTorch"],
-        },
-        {
-          step: 4,
-          title: "Model Selection & Hyperparameter Optimization",
-          description:
-            "Systematic benchmarking across LightGBM, CatBoost, XGBoost, and PyTorch multi-layer perceptrons using Bayesian optimization.",
-          technologies: ["XGBoost", "PyTorch", "Optuna"],
-        },
-        {
-          step: 5,
-          title: "Threshold Tuning for F0.5 Score",
-          description:
-            "Post-processing decision probability calibration specifically shifting decision thresholds to maximize the competition metric (F0.5), placing double weight on precision.",
-          technologies: ["Scikit-Learn", "NumPy"],
-        },
-      ],
-    },
-    implementationDetails: [
-      "Constructed a modular feature engineering module parsing numerical measurements and standardizing disparate physical units across product text fields.",
-      "Designed a strict 5-fold stratified cross-validation strategy with out-of-fold predictions to prevent target leakage during feature generation.",
-      "Tuned tree-based gradient boosting models (XGBoost) using Optuna Bayesian search over depth, learning rate, subsampling, and regularization penalties.",
-      "Engineered an out-of-fold probability calibration step to systematically optimize binary and multi-class cutoff thresholds for the asymmetric F0.5 objective function.",
-      "Built reproducible execution scripts with fixed random seeds, automated metric tracking, and standardized artifact serialization.",
-    ],
-    keyFeatures: [
-      "Domain-specific regex token extraction parsing noisy alphanumeric product catalog entries.",
-      "Standardized multi-unit normalization module aligning fractional and decimal metric and imperial measurements.",
-      "Stratified cross-validation framework guaranteeing validation stability without data leakage.",
-      "Gradient boosting ensemble leveraging XGBoost with hyperparameter sweeps optimized for tabular structures.",
-      "Custom probability threshold calibration explicitly fine-tuned for precision-weighted F0.5 optimization.",
-    ],
-    technicalChallenges: [
-      "Managing severe class imbalance across sparse and long-tail product categories.",
-      "Disentangling ambiguous unit abbreviations and typographical errors in user-generated catalog descriptions.",
-      "Optimizing decision boundary cutoffs to favor high precision without sacrificing representative recall on validation folds.",
-    ],
-    personalContribution:
-      "Formulated the end-to-end data preprocessing scripts, built the unit normalization regex pipelines, trained and tuned the XGBoost models, and implemented the threshold calibration algorithm to optimize the competition F0.5 metric.",
-    metricsOrResults: [
-      "Strict 5-fold cross-validation scheme verified with zero data leakage across feature transformations.",
-      "Measurable performance gains achieved via custom probability threshold calibration targeted at the F0.5 precision-weighted objective.",
-    ],
-    githubUrl: "https://github.com/example/amazon-ml-challenge",
+      "Designed and developed the platform architecture, implemented the frontend interactive components, and wrote algorithmic explanation modules.",
+    githubUrl: "https://github.com/riteshydv05",
   },
 ];
 
 export const skillCategories: TechCategory[] = [
   {
-    categoryName: "Programming",
+    categoryName: "Programming Languages",
     skills: [
-      { name: "Java", description: "Object-oriented modeling, multithreading, enterprise backend services" },
-      { name: "Python", description: "AsyncIO, PyTorch neural inference, computer vision, data pipelines" },
-      { name: "JavaScript", description: "Modern ESNext runtimes, event loop handling, asynchronous patterns" },
-      { name: "TypeScript", description: "Strict static typing, complex generic interfaces, AST contracts" },
+      { name: "JavaScript (ES6+)", description: "Modern ESNext, asynchronous patterns, DOM manipulation" },
+      { name: "Python", description: "Data analysis with Pandas, scripting, automation" },
+      { name: "Java", description: "Object-oriented programming, core data structures, algorithms" },
     ],
   },
   {
     categoryName: "Frontend",
     skills: [
-      { name: "React", description: "Concurrent mode, functional hooks, custom headless component architecture" },
-      { name: "Next.js", description: "App Router, streaming SSR, server components, edge optimization" },
-      { name: "HTML5", description: "Semantic document hierarchy, web accessibility (a11y), standard DOM APIs" },
-      { name: "CSS3", description: "CSS grid, flexbox layouts, animations, container queries, modern variables" },
-      { name: "Tailwind CSS", description: "Utility-first design tokens, high-contrast themes, responsive constraints" },
+      { name: "React", description: "Component architecture, hooks, state management, SPA design" },
+      { name: "Tailwind CSS", description: "Utility-first responsive layouts, custom design systems" },
     ],
   },
   {
     categoryName: "Backend",
     skills: [
-      { name: "FastAPI", description: "High-throughput asynchronous REST services, Pydantic type validation" },
-      { name: "RESTful API Design", description: "Idempotent endpoints, HTTP semantics, rate limiting, OpenAPI specifications" },
+      { name: "Node.js", description: "Event-driven runtime environment, asynchronous backend services" },
+      { name: "Express.js", description: "RESTful API architecture, routing, middleware integration" },
     ],
   },
   {
-    categoryName: "Database",
+    categoryName: "Databases",
     skills: [
-      { name: "PostgreSQL", description: "ACID transactions, relational schemas, query planning, indexing strategies" },
-      { name: "Redis", description: "In-memory caching, message broker, distributed lock management" },
-      { name: "PostGIS", description: "Spatial database engine, polygon intersection predicates, GIST indexing" },
-      { name: "MinIO", description: "S3-compatible distributed object storage, pre-signed upload URLs" },
+      { name: "MongoDB", description: "NoSQL document modeling, aggregation pipelines, Mongoose ODM" },
+      { name: "Firebase", description: "Realtime database, authentication, cloud storage integrations" },
     ],
   },
   {
-    categoryName: "AI/ML",
+    categoryName: "Tools and Technologies",
     skills: [
-      { name: "OCR", description: "PaddleOCR text localization & TrOCR sequence-to-sequence handwritten models" },
-      { name: "NLP", description: "Token classification, LayoutLMv3 multimodal document layout analysis" },
-      { name: "Computer Vision", description: "RetinaFace landmark localization, ArcFace 512-d metric embeddings" },
-      { name: "Machine Learning Pipelines", description: "Stratified cross-validation, feature normalization, F0.5 score calibration" },
+      { name: "Git", description: "Version control, branching strategies, commit workflows" },
+      { name: "GitHub", description: "Code collaboration, repository management, releases" },
+      { name: "Power BI", description: "Business intelligence dashboards, data visualization, reporting" },
+      { name: "Figma", description: "UI/UX wireframing, component mockups, design prototyping" },
+      { name: "Microsoft Excel", description: "Data organization, formula functions, pivot tables" },
     ],
   },
+];
+
+export const achievements: Achievement[] = [
   {
-    categoryName: "Infrastructure",
-    skills: [
-      { name: "Docker", description: "Multi-stage container builds, reproducible environments, service isolation" },
-      { name: "Git", description: "Trunk-based development, atomic commits, interactive rebase workflows" },
-      { name: "GitHub", description: "CI/CD automated testing workflows, code review pipelines, releases" },
-      { name: "Cloud Deployment", description: "Linux VPS environments, reverse proxy configs, environment management" },
-    ],
+    id: "techfest-2025",
+    title: "Winner — IIT Bombay Techfest 2025",
+    organization: "IIT Bombay",
+    year: "2025",
+    badge: "WINNER",
+    description:
+      "Won first place at Asia's largest science and technology festival, IIT Bombay Techfest 2025, for the Cognito Learning Hub full-stack platform.",
+  },
+  {
+    id: "infotsav-2025",
+    title: "Finalist — Infotsav'25 Hackathon",
+    organization: "IIIT Gwalior",
+    year: "2025",
+    badge: "FINALIST",
+    description:
+      "Selected as a hackathon finalist at IIIT Gwalior for architecting and building a collaborative ed-tech application using the MERN stack.",
+  },
+  {
+    id: "sih",
+    title: "Participant — Smart India Hackathon",
+    organization: "Government of India / AICTE",
+    badge: "PARTICIPANT",
+    description:
+      "Participated in the premier national innovation initiative, solving real-world technological challenges as part of a collaborative team.",
+  },
+  {
+    id: "deloitte-analytics",
+    title: "Data Analytics Certification",
+    organization: "Deloitte",
+    badge: "CERTIFIED",
+    description:
+      "Completed industry data analytics credential covering data interpretation, practical analysis workflows, and presentation of insights.",
+  },
+];
+
+export const leadershipRole: LeadershipRole = {
+  role: "Executive Member",
+  organization: "The Editorial Board, MMMUT",
+  websiteUrl: "https://www.theeditorialboard.in/",
+  description:
+    "Designed and actively maintain the official website of the university's Editorial Board (theeditorialboard.in), contributing technical expertise and design leadership to ensure an effective digital presence for campus media and publications.",
+  keyContributions: [
+    "Designed and actively maintain the official web portal of The Editorial Board, MMMUT (https://www.theeditorialboard.in/).",
+    "Manage content updates, visual layouts, and responsive cross-device compatibility.",
+    "Collaborate with student editors and writers to publish university initiatives and newsletters.",
+  ],
+};
+
+export const educationList: EducationItem[] = [
+  {
+    degree: "B.Tech — Computer Science and Engineering",
+    institution: "Madan Mohan Malaviya University of Technology, Gorakhpur",
+    duration: "2024–2028",
+    score: "CGPA: 8.14/10",
+  },
+  {
+    degree: "Class XII — CBSE Board",
+    institution: "Central Board of Secondary Education",
+    duration: "2023",
+    score: "83%",
+  },
+  {
+    degree: "Class X — CBSE Board",
+    institution: "Central Board of Secondary Education",
+    duration: "2021",
+    score: "93%",
   },
 ];

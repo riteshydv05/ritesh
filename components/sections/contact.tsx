@@ -8,9 +8,10 @@ import {
   Check,
   Github,
   Linkedin,
-  FileText,
   ArrowUpRight,
   MessageSquare,
+  Phone,
+  Globe,
 } from "lucide-react";
 
 export function ContactSection() {
@@ -38,19 +39,19 @@ export function ContactSection() {
             <div>
               <div className="font-mono text-xs uppercase tracking-widest text-editorial-cream/70 mb-2 flex items-center gap-2">
                 <span className="w-2.5 h-2.5 bg-editorial-orange rounded-full shadow-[0_0_8px_#f14d05]" />
-                <span className="font-bold text-editorial-cream">Section // 04</span>
+                <span className="font-bold text-editorial-cream">Section // 05</span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-editorial-cream-light">
                 Contact & Collaboration
               </h2>
             </div>
             <p className="max-w-md text-xs sm:text-sm font-mono text-editorial-cream/80 bg-editorial-charcoal/50 p-3 rounded-sm border border-neutral-800">
-              Open to technical engineering roles, distributed systems consulting, and applied AI initiatives.
+              Open to software engineering roles, full-stack development, and tech collaborations.
             </p>
           </div>
         </div>
 
-        {/* High-Contrast CTA Container in Rich Charcoal with Cream & Orange Elements */}
+        {/* High-Contrast CTA Container */}
         <div className="border border-neutral-800 bg-editorial-charcoal/85 p-6 sm:p-10 md:p-12 mb-12 rounded-sm relative overflow-hidden shadow-xl">
           {/* Top 4-Stripe Accent Line */}
           <div className="absolute top-0 left-0 right-0 h-1.5 stripe-bar-heath" />
@@ -58,20 +59,19 @@ export function ContactSection() {
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#131615] border border-neutral-700 text-editorial-cream font-mono text-[11px] uppercase tracking-wider rounded-sm shadow-xs">
               <MessageSquare className="w-3.5 h-3.5 text-editorial-orange" />
-              <span className="font-semibold text-editorial-cream">Inquiries & Architecture Discussions</span>
+              <span className="font-semibold text-editorial-cream">Let&apos;s Connect</span>
             </div>
 
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-editorial-cream-light leading-snug">
-              Interested in discussing technical architecture or collaboration?
+              Interested in discussing software projects or technology?
             </h3>
 
             <p className="text-sm sm:text-base text-editorial-cream/90 leading-relaxed max-w-2xl bg-[#131615]/50 p-4 rounded-sm border-l-2 border-editorial-orange">
-              Whether you are architecting a high-throughput computer vision pipeline,
-              digitizing legacy document corpora, or building resilient full-stack systems—I am
-              always interested in discussing ambitious engineering problems.
+              I&apos;m always glad to talk about full-stack web applications, collaborative hackathons,
+              or engineering challenges. Feel free to reach out directly via email, phone, or LinkedIn.
             </p>
 
-            {/* Email Action Bar */}
+            {/* Email & Phone Action Bar */}
             <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
               <a
                 href={`mailto:${personalInfo.email}`}
@@ -100,11 +100,19 @@ export function ContactSection() {
                   </>
                 )}
               </button>
+
+              <a
+                href={`tel:${personalInfo.phone.replace(/[^0-9+]/g, "")}`}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs sm:text-sm font-mono uppercase tracking-wider font-semibold text-editorial-cream bg-[#131615] hover:bg-editorial-charcoal border border-neutral-700 rounded-full transition-colors"
+              >
+                <Phone className="w-4 h-4 text-editorial-orange" />
+                <span>{personalInfo.phone}</span>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Direct Link Cards Grid in Charcoal & Cream */}
+        {/* Direct Link Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {/* GitHub Card */}
           <a
@@ -127,11 +135,11 @@ export function ContactSection() {
                 </h4>
               </div>
               <p className="text-xs text-editorial-cream/80 font-mono">
-                Source code repositories, neural experiments, and open-source contributions.
+                Web application repositories, code samples, and open-source contributions.
               </p>
             </div>
             <div className="mt-6 pt-3 border-t border-neutral-750 text-[11px] font-mono text-editorial-cream/60">
-              github.com/aditya
+              github.com/{personalInfo.githubUsername}
             </div>
           </a>
 
@@ -156,17 +164,17 @@ export function ContactSection() {
                 </h4>
               </div>
               <p className="text-xs text-editorial-cream/80 font-mono">
-                Professional engineering trajectory, network connections, and updates.
+                Professional connections, academic updates, and technology networking.
               </p>
             </div>
             <div className="mt-6 pt-3 border-t border-neutral-750 text-[11px] font-mono text-editorial-cream/60">
-              linkedin.com/in/aditya
+              linkedin.com/in/{personalInfo.linkedinUsername}
             </div>
           </a>
 
-          {/* Resume Card */}
+          {/* The Editorial Board Official Portal */}
           <a
-            href={personalInfo.resumeUrl}
+            href="https://www.theeditorialboard.in/"
             target="_blank"
             rel="noopener noreferrer"
             className="group border border-neutral-800 bg-editorial-charcoal/70 p-6 flex flex-col justify-between transition-all duration-300 hover:border-editorial-orange hover:bg-editorial-charcoal/95 rounded-sm shadow-md"
@@ -177,19 +185,19 @@ export function ContactSection() {
                 <ArrowUpRight className="w-4 h-4 text-editorial-orange transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </div>
               <div className="flex items-center gap-3 mb-2">
-                <div className="p-2.5 bg-[#131615] border border-neutral-700 text-editorial-cream rounded-sm group-hover:border-editorial-orange/60 transition-colors shadow-xs">
-                  <FileText className="w-4 h-4" />
+                <div className="p-2.5 bg-[#131615] border border-neutral-700 text-editorial-orange rounded-sm group-hover:border-editorial-orange/60 transition-colors shadow-xs">
+                  <Globe className="w-4 h-4" />
                 </div>
                 <h4 className="text-base font-bold text-editorial-cream-light group-hover:text-white transition-colors">
-                  Resume
+                  The Editorial Board
                 </h4>
               </div>
               <p className="text-xs text-editorial-cream/80 font-mono">
-                Printable PDF summary of technical competencies, education, and experience.
+                Official website of The Editorial Board, MMMUT, designed and maintained by Ritesh Yadav.
               </p>
             </div>
             <div className="mt-6 pt-3 border-t border-neutral-750 text-[11px] font-mono text-editorial-orange font-bold">
-              PDF // 2026 EDITION
+              theeditorialboard.in ↗
             </div>
           </a>
         </div>
@@ -199,7 +207,7 @@ export function ContactSection() {
           <div className="flex items-center gap-2">
             <span className="h-2 w-8 stripe-bar-heath inline-block rounded-xs" />
             <span className="font-semibold text-editorial-cream">
-              CURRENT FOCUS: FULL-STACK ARCHITECTURE & APPLIED AI SYSTEMS
+              STATUS: COMPUTER SCIENCE UNDERGRADUATE @ MMMUT GORAKHPUR
             </span>
           </div>
           <span className="text-editorial-orange font-bold">RESPONSE LATENCY: WITHIN 24 HOURS</span>
