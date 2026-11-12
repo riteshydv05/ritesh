@@ -22,7 +22,6 @@ export const personalInfo: PersonalInfo = {
   university: "Madan Mohan Malaviya University of Technology (MMMUT), Gorakhpur",
   degree: "B.Tech in Computer Science and Engineering",
   duration: "2024–2028",
-  cgpa: "8.14/10",
 };
 
 export const aboutNarrative = {
@@ -473,6 +472,15 @@ export const achievements: Achievement[] = [
     description:
       "Selected as a hackathon finalist at IIIT Gwalior for architecting and building a collaborative ed-tech application using the MERN stack.",
   },
+  {
+    id: "machine-guru-creative",
+    title: "Most Creative Solution — Machine Guru",
+    organization: "Machine Learning & Algorithm Platform",
+    year: "2025",
+    badge: "CREATIVE",
+    description:
+      "Awarded Most Creative Solution for interactive machine learning visualization, intuitive parameter tuning, and real-time algorithmic demonstrations.",
+  },
 ];
 
 export const leadershipRole: LeadershipRole = {
@@ -493,7 +501,7 @@ export const educationList: EducationItem[] = [
     degree: "B.Tech — Computer Science and Engineering",
     institution: "Madan Mohan Malaviya University of Technology, Gorakhpur",
     duration: "2024–2028",
-    score: "CGPA: 8.14/10",
+    score: "Pursuing",
   },
   {
     degree: "Class XII — CBSE Board",

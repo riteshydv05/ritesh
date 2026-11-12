@@ -78,5 +78,4 @@ export interface PersonalInfo {
   university: string;
   degree: string;
   duration: string;
-  cgpa: string;
 }

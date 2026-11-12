@@ -158,7 +158,6 @@ export function Hero() {
                   MMMUT GORAKHPUR • B.TECH CSE (2024–2028)
                 </span>
               </div>
-              <div className="text-neutral-400">CGPA: {personalInfo.cgpa}</div>
               <div className="text-editorial-orange font-bold flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-editorial-orange rounded-full animate-ping" />
                 <span>WINNER: IIT BOMBAY TECHFEST 2025</span>
