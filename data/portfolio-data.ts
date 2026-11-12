@@ -352,13 +352,14 @@ export const projects: Project[] = [
     title: "MACHINE GURU",
     subtitle: "Interactive Machine Learning & Algorithm Exploration Platform",
     tagline:
-      "An educational and practical platform designed to help developers and students explore machine learning concepts, model behaviors, and algorithmic implementations through interactive demos.",
+      "Awarded Most Creative Solution: An educational platform designed to help developers and students explore machine learning concepts, model behaviors, and algorithmic implementations through interactive demos.",
+    achievementBadge: "Most Creative Solution",
     coverImage: "/projects/machineguru.webp",
     tags: ["Python", "React", "Machine Learning", "FastAPI", "Tailwind CSS"],
     problemStatement:
       "Understanding machine learning algorithms often requires bridging abstract mathematical equations with concrete code behavior. Learners struggle to visualize decision boundaries, loss convergence, and parameter sensitivity without interactive experimentation.",
     solution:
-      "Built Machine Guru as an interactive educational hub where users can visualize algorithmic pipelines, explore classical ML models (regression, classification, clustering), and inspect step-by-step mathematical intuitions in real time.",
+      "Engineered Machine Guru as an interactive educational hub—recognized for its creative solution—where users can visualize algorithmic pipelines, explore classical ML models (regression, classification, clustering), and inspect step-by-step mathematical intuitions in real time.",
     systemArchitecture: {
       summary:
         "Interactive client-server architecture pairing visual exploratory frontends with Python-powered machine learning inference and visualization engines.",
@@ -387,11 +388,13 @@ export const projects: Project[] = [
       ],
     },
     implementationDetails: [
+      "Awarded Most Creative Solution for innovative educational approach and real-time visualization UX.",
       "Developed interactive parameter sliders and visual plot renderers in React.",
       "Implemented modular Python endpoints calculating model training loops and decision boundaries dynamically.",
       "Structured comprehensive guides detailing mathematical foundations and real-world engineering trade-offs.",
     ],
     keyFeatures: [
+      "Awarded Most Creative Solution for innovative technical learning design.",
       "Interactive model parameter tuning and instant visual feedback.",
       "Decision boundary visualizations for classification and clustering algorithms.",
       "Modular architectural layout suitable for self-paced student learning.",
@@ -401,7 +404,10 @@ export const projects: Project[] = [
       "Translating complex mathematical concepts into clean, accessible visual representations.",
     ],
     personalContribution:
-      "Designed and developed the platform architecture, implemented the frontend interactive components, and wrote algorithmic explanation modules.",
+      "Designed and developed the platform architecture, implemented the frontend interactive components, and wrote algorithmic explanation modules, earning recognition for the Most Creative Solution.",
+    metricsOrResults: [
+      "Recognized for Most Creative Solution in machine learning education and algorithm demonstration.",
+    ],
     githubUrl: "https://github.com/riteshydv05",
   },
 ];
@@ -466,22 +472,6 @@ export const achievements: Achievement[] = [
     badge: "FINALIST",
     description:
       "Selected as a hackathon finalist at IIIT Gwalior for architecting and building a collaborative ed-tech application using the MERN stack.",
-  },
-  {
-    id: "sih",
-    title: "Participant — Smart India Hackathon",
-    organization: "Government of India / AICTE",
-    badge: "PARTICIPANT",
-    description:
-      "Participated in the premier national innovation initiative, solving real-world technological challenges as part of a collaborative team.",
-  },
-  {
-    id: "deloitte-analytics",
-    title: "Data Analytics Certification",
-    organization: "Deloitte",
-    badge: "CERTIFIED",
-    description:
-      "Completed industry data analytics credential covering data interpretation, practical analysis workflows, and presentation of insights.",
   },
 ];
 

@@ -40,10 +40,15 @@ export function ProjectCard({
         <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
           <div>
             {/* Numbered Indicator with Heath Orange Accent */}
-            <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest mb-4">
+            <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-widest mb-4">
               <span className="text-editorial-orange font-bold text-sm">{formattedIndex} / PROJECT</span>
               <span className="h-px flex-1 max-w-[60px] bg-neutral-700" />
               <span className="text-editorial-cream/70 font-semibold">{project.id.toUpperCase()}</span>
+              {project.achievementBadge && (
+                <span className="px-2.5 py-0.5 text-[10px] font-bold text-white bg-editorial-orange border border-editorial-orange rounded-full shadow-[0_0_8px_rgba(241,77,5,0.4)]">
+                  ★ {project.achievementBadge}
+                </span>
+              )}
             </div>
 
             {/* Project Title & Subtitle */}

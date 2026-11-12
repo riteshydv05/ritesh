@@ -24,12 +24,12 @@ export function AchievementsSection() {
               </h2>
             </div>
             <p className="max-w-md text-xs sm:text-sm font-mono text-editorial-cream/80 bg-editorial-charcoal/50 p-3 rounded-sm border border-neutral-800">
-              National hackathons, collegiate technology competitions, and professional credentials.
+              National hackathons and collegiate technology competitions.
             </p>
           </div>
         </div>
 
-        {/* 4 Achievements Grid / Timeline */}
+        {/* Achievements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {achievements.map((item, index) => {
             const isWinner = item.badge === "WINNER";
