@@ -4,7 +4,6 @@ import {
   TechCategory,
   Achievement,
   LeadershipRole,
-  EducationItem,
 } from "@/types";
 
 export const personalInfo: PersonalInfo = {
@@ -495,24 +494,3 @@ export const leadershipRole: LeadershipRole = {
     "Collaborate with student editors and writers to publish university initiatives and newsletters.",
   ],
 };
-
-export const educationList: EducationItem[] = [
-  {
-    degree: "B.Tech — Computer Science and Engineering",
-    institution: "Madan Mohan Malaviya University of Technology, Gorakhpur",
-    duration: "2024–2028",
-    score: "Pursuing",
-  },
-  {
-    degree: "Class XII — CBSE Board",
-    institution: "Central Board of Secondary Education",
-    duration: "2023",
-    score: "83%",
-  },
-  {
-    degree: "Class X — CBSE Board",
-    institution: "Central Board of Secondary Education",
-    duration: "2021",
-    score: "93%",
-  },
-];

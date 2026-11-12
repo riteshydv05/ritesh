@@ -57,13 +57,6 @@ export interface LeadershipRole {
   keyContributions: string[];
 }
 
-export interface EducationItem {
-  degree: string;
-  institution: string;
-  duration: string;
-  score: string;
-}
-
 export interface PersonalInfo {
   name: string;
   roleTitle: string;

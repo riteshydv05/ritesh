@@ -1,102 +1,46 @@
 "use client";
 
 import React from "react";
+import { skillCategories } from "@/data/portfolio-data";
 import {
   Code,
   Layout,
   Server,
   Database,
-  BrainCircuit,
   Wrench,
   Terminal,
 } from "lucide-react";
 
-interface SkillItem {
-  name: string;
-  context: string;
-}
-
-interface SkillCategory {
-  title: string;
-  categoryTag: string;
-  icon: React.ElementType;
-  description: string;
-  skills: SkillItem[];
-}
-
-const SKILL_CATEGORIES: SkillCategory[] = [
-  {
-    title: "Programming",
-    categoryTag: "LANGUAGES",
+const CATEGORY_META: Record<
+  string,
+  { tag: string; icon: React.ElementType; description: string }
+> = {
+  "Programming Languages": {
+    tag: "LANGUAGES",
     icon: Code,
-    description: "Core languages for systems architecture, typed contracts, and neural inference.",
-    skills: [
-      { name: "Java", context: "Object-oriented systems, concurrent processing, and enterprise services" },
-      { name: "Python", context: "AsyncIO, PyTorch neural models, computer vision, and data pipelines" },
-      { name: "JavaScript", context: "Modern ESNext runtimes, event loop handling, and async patterns" },
-      { name: "TypeScript", context: "Strict static typing, complex generic interfaces, and AST validation" },
-    ],
+    description: "Core languages for building robust web applications, data workflows, and algorithms.",
   },
-  {
-    title: "Frontend",
-    categoryTag: "CLIENT_SIDE",
+  Frontend: {
+    tag: "CLIENT_SIDE",
     icon: Layout,
-    description: "Performant, accessible, and high-fidelity editorial user interfaces.",
-    skills: [
-      { name: "React", context: "Concurrent mode, functional hooks, and custom component primitives" },
-      { name: "Next.js", context: "App Router, streaming SSR, Server Components, and edge optimization" },
-      { name: "HTML", context: "Semantic document structure, accessibility (a11y), and standard DOM APIs" },
-      { name: "CSS", context: "Modern layouts, grid systems, animations, and container queries" },
-      { name: "Tailwind CSS", context: "Utility-first design tokens, high-contrast themes, and layout rules" },
-    ],
+    description: "Modern component-driven interfaces, high-fidelity responsive styling, and accessible layouts.",
   },
-  {
-    title: "Backend",
-    categoryTag: "DISTRIBUTED_SERVICES",
+  Backend: {
+    tag: "BACKEND_SERVICES",
     icon: Server,
-    description: "High-throughput asynchronous services and resilient interface contracts.",
-    skills: [
-      { name: "FastAPI", context: "Asynchronous REST services, Pydantic type validation, and OpenAPI specs" },
-      { name: "REST APIs", context: "Idempotent endpoints, HTTP semantics, rate-limiting, and error handling" },
-    ],
+    description: "RESTful architecture, asynchronous runtime environments, and scalable server routing.",
   },
-  {
-    title: "Database",
-    categoryTag: "STORAGE_TIER",
+  Databases: {
+    tag: "DATABASE_TIER",
     icon: Database,
-    description: "Relational modeling, geospatial indexing, and distributed object storage.",
-    skills: [
-      { name: "PostgreSQL", context: "ACID transactions, relational schema design, and query optimization" },
-      { name: "Redis", context: "In-memory caching, message broker queues, and distributed key locks" },
-      { name: "PostGIS", context: "Spatial database engine, polygon intersection predicates, and GIST indexing" },
-      { name: "MinIO", context: "S3-compatible distributed object storage and presigned streaming URLs" },
-    ],
+    description: "Document-oriented NoSQL storage, schema modeling, and realtime cloud synchronization.",
   },
-  {
-    title: "AI / ML",
-    categoryTag: "APPLIED_INTELLIGENCE",
-    icon: BrainCircuit,
-    description: "Applied computer vision, OCR extraction, and precision statistical modeling.",
-    skills: [
-      { name: "OCR", context: "PaddleOCR text localization and TrOCR sequence-to-sequence handwritten models" },
-      { name: "NLP", context: "LayoutLMv3 multimodal document layout analysis and token classification" },
-      { name: "Computer Vision", context: "RetinaFace facial landmark alignment and ArcFace 512-d metric embeddings" },
-      { name: "Machine Learning", context: "Stratified cross-validation, feature normalization, and F0.5 score calibration" },
-    ],
-  },
-  {
-    title: "Infrastructure",
-    categoryTag: "DEV_OPERATIONS",
+  "Tools and Technologies": {
+    tag: "DEV_TOOLS",
     icon: Wrench,
-    description: "Containerization, version control, and dependable deployment workflows.",
-    skills: [
-      { name: "Docker", context: "Multi-stage container builds, reproducible environments, and service isolation" },
-      { name: "Git", context: "Trunk-based development, atomic commits, and interactive rebase workflows" },
-      { name: "GitHub", context: "CI/CD automated testing workflows, pull request reviews, and releases" },
-      { name: "Cloud Deployment", context: "Linux VPS environments, reverse proxy configs, and production pipelines" },
-    ],
+    description: "Version control workflows, data analytics dashboards, UI wireframing, and productivity tools.",
   },
-];
+};
 
 export function SkillsSection() {
   return (
@@ -114,24 +58,29 @@ export function SkillsSection() {
                 <span className="font-bold text-editorial-cream">Section // 02</span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-editorial-cream-light">
-                TECHNICAL EXPERTISE
+                TECHNICAL SKILLS
               </h2>
             </div>
             <p className="max-w-md text-xs sm:text-sm font-mono text-editorial-cream/80 bg-editorial-charcoal/50 p-3 rounded-sm border border-neutral-800">
-              Categorized tools, frameworks, and system building blocks. Zero arbitrary percentage bars.
+              Verified technical capabilities across programming, web development, data analysis, and tooling.
             </p>
           </div>
         </div>
 
-        {/* 6-Card Grid in Charcoal & Cream */}
+        {/* 5-Card Grid in Charcoal & Cream */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {SKILL_CATEGORIES.map((category, index) => {
-            const Icon = category.icon;
+          {skillCategories.map((category, index) => {
+            const meta = CATEGORY_META[category.categoryName] ?? {
+              tag: "TECH_STACK",
+              icon: Code,
+              description: "Technical tools and frameworks.",
+            };
+            const Icon = meta.icon;
             const formattedIndex = String(index + 1).padStart(2, "0");
 
             return (
               <div
-                key={category.title}
+                key={category.categoryName}
                 className="group border border-neutral-800 bg-editorial-charcoal/70 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-editorial-orange hover:bg-editorial-charcoal/95 rounded-sm shadow-md"
               >
                 <div>
@@ -142,7 +91,7 @@ export function SkillsSection() {
                         <Icon className="w-4 h-4" />
                       </div>
                       <span className="font-mono text-xs text-editorial-cream font-bold">
-                        {formattedIndex} // {category.categoryTag}
+                        {formattedIndex} // {meta.tag}
                       </span>
                     </div>
                     <span className="text-[10px] font-mono text-editorial-orange font-bold uppercase bg-editorial-orange/15 px-2 py-0.5 rounded-full border border-editorial-orange/30">
@@ -152,10 +101,10 @@ export function SkillsSection() {
 
                   {/* Category Title & Description */}
                   <h3 className="text-lg font-bold tracking-tight text-editorial-cream-light mb-2 group-hover:text-white transition-colors">
-                    {category.title}
+                    {category.categoryName}
                   </h3>
                   <p className="text-xs text-editorial-cream/70 font-mono mb-6 leading-relaxed">
-                    {category.description}
+                    {meta.description}
                   </p>
 
                   {/* Clean Monospaced Technology Tags with Context Notes */}
@@ -172,7 +121,7 @@ export function SkillsSection() {
                           <span className="w-1.5 h-1.5 bg-editorial-orange rounded-full shadow-[0_0_4px_#f14d05]" />
                         </div>
                         <p className="text-[11px] text-editorial-cream/80 leading-snug">
-                          {skill.context}
+                          {skill.description}
                         </p>
                       </div>
                     ))}
