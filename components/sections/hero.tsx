@@ -2,7 +2,7 @@
 
 import React from "react";
 import { personalInfo } from "@/data/portfolio-data";
-import { HalftoneImage } from "@/components/UI/halftone-image";
+import { HalftoneImage } from "@/components/ui/halftone-image";
 import { ArrowDownRight, Mail, Github, Linkedin, MessageSquare } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { Project } from "@/types";
-import { Badge } from "@/components/UI/badge";
+import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence } from "motion/react";
 import {
   X,

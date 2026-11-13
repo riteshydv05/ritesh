@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Project } from "@/types";
-import { Badge } from "@/components/UI/badge";
+import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Cpu, Layers } from "lucide-react";
 
 interface ProjectCardProps {

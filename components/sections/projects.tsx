@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { projects } from "@/data/portfolio-data";
 import { Project } from "@/types";
-import { ProjectCard } from "@/components/UI/project-card";
-import { CaseStudyModal } from "@/components/UI/case-study-modal";
+import { ProjectCard } from "@/components/ui/project-card";
+import { CaseStudyModal } from "@/components/ui/case-study-modal";
 
 export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
