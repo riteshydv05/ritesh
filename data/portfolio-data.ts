@@ -12,7 +12,7 @@ export const personalInfo: PersonalInfo = {
   headline: "Building digital experiences. Engineering meaningful solutions.",
   description:
     "I'm Ritesh Yadav, a Computer Science undergraduate and Full Stack Developer interested in building practical web applications, exploring technology, and solving real-world problems through engineering.",
-  email: "riteshyvns2005@gmail.com",
+  email: "connectriteshyadav@gmail.com",
   phone: "+91-81153-03806",
   github: "https://github.com/riteshydv05",
   githubUsername: "riteshydv05",
