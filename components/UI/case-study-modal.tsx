@@ -102,7 +102,7 @@ export function CaseStudyModal({ project, isOpen, onClose }: CaseStudyModalProps
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-editorial-orange rounded-full" />
                 <span className="font-mono text-xs uppercase tracking-widest text-editorial-cream font-semibold">
-                  CASE STUDY // {project.id.toUpperCase()}
+                  {`CASE STUDY // ${project.id.toUpperCase()}`}
                 </span>
               </div>
               <div className="flex items-center gap-2">

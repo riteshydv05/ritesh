@@ -149,7 +149,7 @@ export function ProjectCard({
 
           {/* Technical Blueprint Footnote */}
           <div className="flex items-center justify-between text-[11px] font-mono text-editorial-cream/70 px-1">
-            <span className="text-editorial-cream/60">SPEC // FIG. {formattedIndex}</span>
+            <span className="text-editorial-cream/60">{`SPEC // FIG. ${formattedIndex}`}</span>
             <span className="text-editorial-orange font-bold">STATUS: PRODUCTION_READY</span>
           </div>
         </div>

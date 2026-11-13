@@ -2,7 +2,7 @@
 
 import React from "react";
 import { achievements } from "@/data/portfolio-data";
-import { Award, Trophy, CheckCircle, ExternalLink } from "lucide-react";
+import { Award, Trophy } from "lucide-react";
 
 export function AchievementsSection() {
   return (
@@ -69,7 +69,7 @@ export function AchievementsSection() {
                         )}
                       </div>
                       <span className="font-mono text-xs text-editorial-cream font-bold">
-                        HONOR // {formattedIndex}
+                        {`HONOR // ${formattedIndex}`}
                       </span>
                     </div>
 

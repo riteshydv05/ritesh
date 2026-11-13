@@ -57,7 +57,7 @@ export function ProjectsSection() {
                   className="flex items-center justify-between text-[11px] font-mono px-4 select-none"
                   aria-hidden="true"
                 >
-                  <span className="text-editorial-orange font-bold">// SYSTEM DELIMITER</span>
+                  <span className="text-editorial-orange font-bold">{"// SYSTEM DELIMITER"}</span>
                   <span className="h-px flex-1 mx-4 bg-neutral-800" />
                   <span className="text-editorial-cream/70 font-semibold">0{index + 1} ↔ 0{index + 2}</span>
                 </div>
