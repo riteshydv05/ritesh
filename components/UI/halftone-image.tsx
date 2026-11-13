@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 interface HalftoneImageProps {
@@ -9,17 +9,14 @@ interface HalftoneImageProps {
   spec?: string;
 }
 
-const REMOTE_URL =
+const PORTRAIT_URL =
   "https://res.cloudinary.com/s2tcil9t/image/upload/v1794239964/Monochrome_Halftone_Portrait_with_Geometric_Accents.png";
-const LOCAL_FALLBACK = "/portrait.png";
 
 export function HalftoneImage({
   className = "",
   caption = "HEATH_EDITION // PORTRAIT_01",
   spec = "RES: 2400x3200 // MONO_64K",
 }: HalftoneImageProps) {
-  const [imgSrc, setImgSrc] = useState(LOCAL_FALLBACK);
-
   return (
     <div className={`relative flex flex-col items-center justify-center ${className}`}>
       {/* 4-Stripe Accent Ribbon Header Badge */}
@@ -99,19 +96,14 @@ export function HalftoneImage({
             </div>
           </div>
 
-          {/* Portrait Image (uses local public asset with Cloudinary fallback) */}
+          {/* Portrait Image (uses Cloudinary link directly, no local asset) */}
           <div className="relative w-full h-full min-h-[360px] sm:min-h-[420px]">
             <Image
-              src={imgSrc}
+              src={PORTRAIT_URL}
               alt="Monochrome Halftone Portrait with Geometric Accents"
               fill
               priority
               unoptimized
-              onError={() => {
-                if (imgSrc !== REMOTE_URL) {
-                  setImgSrc(REMOTE_URL);
-                }
-              }}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
               className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
             />

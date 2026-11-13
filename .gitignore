@@ -31,3 +31,11 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# User Assets (loaded via Cloudinary, do not commit to GitHub)
+public/portrait.png
+public/*.png
+public/*.jpg
+public/*.jpeg
+public/*.webp
+

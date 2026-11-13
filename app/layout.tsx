@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: `${personalInfo.name} Portfolio`,
     images: [
       {
-        url: "/portrait.png",
+        url: "https://res.cloudinary.com/s2tcil9t/image/upload/v1794239964/Monochrome_Halftone_Portrait_with_Geometric_Accents.png",
         width: 1086,
         height: 1448,
         alt: `${personalInfo.name} — Full Stack Developer & CS Undergraduate`,
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${personalInfo.name} — ${personalInfo.roleTitle}`,
     description: personalInfo.headline,
-    images: ["/portrait.png"],
+    images: ["https://res.cloudinary.com/s2tcil9t/image/upload/v1794239964/Monochrome_Halftone_Portrait_with_Geometric_Accents.png"],
     creator: "@riteshydv05",
   },
   robots: {
